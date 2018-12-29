@@ -1,5 +1,6 @@
 import React from 'react';
 import NavButton from './NavButton';
+import './Navbar.css';
 
 function Navbar() {
   return (

@@ -1,0 +1,13 @@
+.ColouredLine {
+  width: 80%;
+  height: 8px;
+
+  color: #2EFF90;
+  background-color: #2EFF90;
+
+  border: none;
+  margin-left: 0;
+  margin-bottom: 0;
+
+  position: relative;
+}

@@ -1,10 +1,9 @@
 import React from 'react';
+import './NavButton.css';
 
 function NavButton() {
   return (
-    <button type="button">
-      <object data="placeholder" type="image/svg+xml" aria-label="placeholder" />
-    </button>
+    <button className="NavButton" type="button" />
   );
 }
 

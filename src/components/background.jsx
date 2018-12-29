@@ -1,5 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
+import './Background.css';
 
 const particleParameters = {
   particles: {
@@ -110,8 +111,7 @@ const particleParameters = {
 function Background() {
   return (
     <Particles
-      width="100%"
-      height="100%"
+      className="Background"
       params={particleParameters}
     />
   );

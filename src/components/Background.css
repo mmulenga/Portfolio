@@ -1,0 +1,4 @@
+.Background {
+  grid-column: 2 / span 23;
+  grid-row: 1 / span 3;
+}

@@ -1,0 +1,12 @@
+.SectionTitle {
+  grid-area: name;
+  grid-column: 2 / span 2;
+
+  justify-self: start;
+  align-self: center;
+}
+
+.Title {
+  font-size: 40px;
+  color: white;
+}
