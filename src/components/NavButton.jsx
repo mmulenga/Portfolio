@@ -1,9 +1,13 @@
 import React from 'react';
 import './NavButton.css';
 
-function NavButton() {
+function NavButton(props) {
+  const { children } = props;
+
   return (
-    <button className="NavButton" type="button" />
+    <button className="NavButton" type="button">
+      {children}
+    </button>
   );
 }
 

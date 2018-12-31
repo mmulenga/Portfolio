@@ -12,6 +12,9 @@ function App() {
       <Background />
       <Navbar />
       <Landing />
+      <Section>
+        <SectionTitle />
+      </Section>
     </div>
   );
 }
