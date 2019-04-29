@@ -1,0 +1,6 @@
+.Content-Area {
+  width: calc(100% - 4rem);
+  height: 100%;
+
+  overflow: auto;
+}

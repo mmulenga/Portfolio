@@ -110,10 +110,7 @@ const particleParameters = {
 
 function Background() {
   return (
-    <Particles
-      className="Background"
-      params={particleParameters}
-    />
+    <Particles canvasClassName="Particle-Canvas" params={particleParameters} />
   );
 }
 

@@ -1,8 +1,5 @@
 .Section {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-
-  grid-column: 2 / span 23;
-  grid-row: 4 / span 3;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }

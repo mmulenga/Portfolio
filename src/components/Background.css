@@ -1,4 +1,6 @@
-.Background {
-  grid-column: 2 / span 23;
-  grid-row: 1 / span 3;
+.Particle-Canvas {
+  display: block;
+  background: #0E0C0C;
+  position: fixed;
+  /*z-index: -100;*/
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import ColouredLine from './ColouredLine';
+import './SectionTitle.css';
 
 function SectionTitle(props) {
-  const { name } = props;
+  const { name, position } = props;
 
   return (
-    <div className="SectionTitle">
-      <h2 className="Title">
+    <div className={position}>
+      <h2 className="SectionTitleText">
         {name}
       </h2>
       <ColouredLine />

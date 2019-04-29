@@ -1,12 +1,26 @@
-.SectionTitle {
+.Left {
   grid-area: name;
+  grid-row: 1;
   grid-column: 2 / span 2;
 
+  margin-bottom: 4rem;
   justify-self: start;
-  align-self: center;
+  z-index: 1;
 }
 
-.Title {
+.Right {
+  grid-area: name;
+  grid-row: 1;
+  grid-column: 11 / span 2;
+  width: 100%;
+
+  margin-bottom: 4rem;
+  z-index: 1;
+  text-align: right;
+}
+
+.SectionTitleText {
   font-size: 40px;
   color: white;
+  margin-bottom: 0;
 }

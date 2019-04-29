@@ -3,10 +3,6 @@ body, html, #root {
   height: 100%;
 }
 
-#root {
-  position: fixed;
-}
-
 body {
   margin: 0;
   padding: 0;

@@ -1,20 +1,38 @@
 import React from 'react';
 import './App.css';
-import Landing from './containers/Landing';
-import Background from './components/Background';
+
 import Navbar from './components/Navbar';
-import Section from './containers/Section';
+import Background from './components/Background';
 import SectionTitle from './components/SectionTitle';
+import ProjectButton from './components/ProjectButton';
+import About from './components/About';
+import SpotifyTitle from './components/SpotifyTitle';
+import SpotifyWidget from './components/SpotifyWidget';
+
+import ContentArea from './containers/ContentArea';
+import Landing from './containers/Landing';
+import Section from './containers/Section';
 
 function App() {
   return (
     <div className="App">
-      <Background />
       <Navbar />
-      <Landing />
-      <Section>
-        <SectionTitle />
-      </Section>
+      <ContentArea>
+        <Background />
+        <Landing />
+        <Section>
+          <SectionTitle name="Projects" position="Left" />
+          <ProjectButton name="Project-1" />
+          <ProjectButton name="Project-2" />
+          <ProjectButton name="Project-3" />
+        </Section>
+        <Section>
+          <SectionTitle name="About Me" position="Right" />
+          <About />
+          <SpotifyTitle />
+          <SpotifyWidget />
+        </Section>
+      </ContentArea>
     </div>
   );
 }

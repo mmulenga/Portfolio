@@ -1,0 +1,10 @@
+.SpotifyTitle {
+  grid-row: 1;
+  grid-column: 2 / span 2;
+
+  color: white;
+  font-size: 20px;
+  align-self: end;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
