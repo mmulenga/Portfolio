@@ -7,7 +7,7 @@ function Name() {
     <div className="NameContainer">
       <h1 className="Name"> Matt Mulenga </h1>
       <ColouredLine />
-      <h2 className="Title"> Software Developer | Student </h2>
+      <h2 className="Title"> Software Developer | B. Sc. </h2>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Particles from 'react-particles-js';
 import './Background.css';
 
+// Potential colours: #5edcff, #fff056
 const particleParameters = {
   particles: {
     number: {

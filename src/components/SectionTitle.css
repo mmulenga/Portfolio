@@ -9,14 +9,17 @@
 }
 
 .Right {
+  display: flex;
+  flex-direction: column;
   grid-area: name;
   grid-row: 1;
   grid-column: 11 / span 2;
   width: 100%;
 
   margin-bottom: 4rem;
-  z-index: 1;
   text-align: right;
+  align-items: flex-end;
+  z-index: 1;
 }
 
 .SectionTitleText {

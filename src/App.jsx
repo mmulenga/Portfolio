@@ -8,6 +8,7 @@ import ProjectButton from './components/ProjectButton';
 import About from './components/About';
 import SpotifyTitle from './components/SpotifyTitle';
 import SpotifyWidget from './components/SpotifyWidget';
+import Contact from './components/Contact';
 
 import ContentArea from './containers/ContentArea';
 import Landing from './containers/Landing';
@@ -31,6 +32,10 @@ function App() {
           <About />
           <SpotifyTitle />
           <SpotifyWidget />
+        </Section>
+        <Section>
+          <SectionTitle name="Contact" position="Left" />
+          <Contact />
         </Section>
       </ContentArea>
     </div>
