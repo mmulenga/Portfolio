@@ -1,13 +1,35 @@
 .Contact {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
 
-  grid-row: 2 / span 1;
-  grid-column: 2 / span 10;
+  grid-row: 2 / span 3;
+  grid-column: 2/ span 6;
 
+  background-color: #1E1D1D;
   z-index: 1;
 }
 
-.MediaButton {
-  height: 75%;
+.SenderEmail {
+  height: 7%;
+  margin: 1rem 1rem 1rem 1rem;
+  background-color: rgb(68, 65, 65);
+  border: 0;
+  
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+}
+
+.EmailBox {
+  height: 80%;
+  margin: 1rem 1rem 1rem 1rem;
+  background-color: rgb(68, 65, 65);
+  border: 0;
+  resize: none;
+  
+  font-size: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
 }

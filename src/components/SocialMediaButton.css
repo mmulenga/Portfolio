@@ -1,0 +1,21 @@
+.MediaButton {
+  display: flex;
+  grid-column: 9 / span 2;
+}
+
+.Icon {
+  height: 50px;
+  fill: #2EFF90;
+}
+
+.Top {
+  grid-row: 2;
+}
+
+.Middle {
+  grid-row: 3;
+}
+
+.Bottom {
+  grid-row: 4;
+}

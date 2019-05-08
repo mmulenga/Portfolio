@@ -9,6 +9,7 @@ import About from './components/About';
 import SpotifyTitle from './components/SpotifyTitle';
 import SpotifyWidget from './components/SpotifyWidget';
 import Contact from './components/Contact';
+import SocialMediaButton from './components/SocialMediaButton';
 
 import ContentArea from './containers/ContentArea';
 import Landing from './containers/Landing';
@@ -33,9 +34,12 @@ function App() {
           <SpotifyTitle />
           <SpotifyWidget />
         </Section>
-        <Section>
+        <Section type="Solid">
           <SectionTitle name="Contact" position="Left" />
           <Contact />
+          <SocialMediaButton alternative="Send me an email!" label="Email" position="Top" />
+          <SocialMediaButton alternative="My GitHub account!" label="GitHub" position="Middle" />
+          <SocialMediaButton alternative="My LinkedIn account!" label="LinkedIn" position="Bottom" />
         </Section>
       </ContentArea>
     </div>

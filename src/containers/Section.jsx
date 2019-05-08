@@ -2,10 +2,10 @@ import React from 'react';
 import './Section.css';
 
 function Section(props) {
-  const { children } = props;
+  const { children, type } = props;
 
   return (
-    <div className="Section">
+    <div className={`Section ${type}`}>
       {children}
     </div>
   );
