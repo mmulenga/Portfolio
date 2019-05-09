@@ -5,7 +5,7 @@ function Section(props) {
   const { children, type } = props;
 
   return (
-    <div className={`Section ${type}`}>
+    <div className={type}>
       {children}
     </div>
   );

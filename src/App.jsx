@@ -22,19 +22,19 @@ function App() {
       <ContentArea>
         <Background />
         <Landing />
-        <Section>
+        <Section type="Section">
           <SectionTitle name="Projects" position="Left" />
           <ProjectButton name="Project-1" />
           <ProjectButton name="Project-2" />
           <ProjectButton name="Project-3" />
         </Section>
-        <Section>
+        <Section type="Section">
           <SectionTitle name="About Me" position="Right" />
           <About />
           <SpotifyTitle />
           <SpotifyWidget />
         </Section>
-        <Section type="Solid">
+        <Section type="ContactSection">
           <SectionTitle name="Contact" position="Left" />
           <Contact />
           <SocialMediaButton alternative="Send me an email!" label="Email" position="Top" />

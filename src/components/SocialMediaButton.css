@@ -1,15 +1,40 @@
 .MediaButton {
   display: flex;
-  grid-column: 9 / span 2;
+  align-items: center;
+  grid-column: 10 / span 2;
+  z-index: 1;
 }
 
 .Icon {
-  height: 50px;
+  height: 40px;
   fill: #2EFF90;
+  border: 1px solid #2EFF90;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.Icon:hover {
+  cursor: pointer;
+  fill: #1E1D1D;
+  border-color: #1E1D1D;
+  background-color: rgba(46, 255, 144, 1);
+	-webkit-transition: 200ms;
+	-webkit-transition-timing-function: ease-in-out;
+	transition: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+.Label {
+  color: white;
+  font-size: 35px;
+  margin-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .Top {
   grid-row: 2;
+  align-self: end;
 }
 
 .Middle {
@@ -18,4 +43,5 @@
 
 .Bottom {
   grid-row: 4;
+  align-self: start;
 }

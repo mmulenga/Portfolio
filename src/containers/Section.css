@@ -4,8 +4,8 @@
   grid-template-rows: repeat(4, 1fr);
 }
 
-.Solid {
-  position: relative;
-  background-color: #1E1D1D;
-  z-index: 1;
+.ContactSection {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
