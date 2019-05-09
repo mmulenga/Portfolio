@@ -8,16 +8,18 @@
 .Icon {
   height: 40px;
   fill: #2EFF90;
-  border: 1px solid #2EFF90;
+  background-color: #1E1D1D;
+  border: 1.5px solid #2EFF90;
   border-radius: 50%;
   padding: 1rem;
+  overflow: visible;
 }
 
 .Icon:hover {
   cursor: pointer;
   fill: #1E1D1D;
   border-color: #1E1D1D;
-  background-color: rgba(46, 255, 144, 1);
+  background-color: #2EFF90;
 	-webkit-transition: 200ms;
 	-webkit-transition-timing-function: ease-in-out;
 	transition: 200ms;

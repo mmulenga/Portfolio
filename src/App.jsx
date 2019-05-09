@@ -10,6 +10,7 @@ import SpotifyTitle from './components/SpotifyTitle';
 import SpotifyWidget from './components/SpotifyWidget';
 import Contact from './components/Contact';
 import SocialMediaButton from './components/SocialMediaButton';
+import Footer from './components/Footer';
 
 import ContentArea from './containers/ContentArea';
 import Landing from './containers/Landing';
@@ -40,6 +41,7 @@ function App() {
           <SocialMediaButton alternative="Send me an email!" label="Email" position="Top" />
           <SocialMediaButton alternative="My GitHub account!" label="GitHub" position="Middle" />
           <SocialMediaButton alternative="My LinkedIn account!" label="LinkedIn" position="Bottom" />
+          <Footer />
         </Section>
       </ContentArea>
     </div>
