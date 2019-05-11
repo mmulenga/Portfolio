@@ -1,19 +1,48 @@
 .NameContainer {
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 1;
+  
   color: white;
-  grid-row: 2;
-  grid-column: 6 / span 4;
+  justify-self: center;
+  text-align: center;
+  
   z-index: 1;
 }
 
 .Name {
   margin-left: 0;
   margin-top: 0;
-  font-size: 80px;
+  margin-bottom: 0;
+  font-size: 60px;
 }
 
 .Title {
-  font-size: 30px;
+  font-size: 20px;
 
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@media only screen and (min-width:768px) {
+  .NameContainer {
+    grid-column: 6 / span 5;
+    grid-row: 2 / span 1;
+  
+    justify-self: start;
+    align-self: center;
+    text-align: left;
+  }
+
+  .Name {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 80px;
+  }
+  
+  .Title {
+    font-size: 30px;
+  
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

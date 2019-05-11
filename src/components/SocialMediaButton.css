@@ -1,7 +1,8 @@
 .MediaButton {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  grid-column: 10 / span 2;
+  align-self: center;
   z-index: 1;
 }
 
@@ -26,24 +27,60 @@
 	transition-timing-function: ease-in-out;
 }
 
-.Label {
-  color: white;
-  font-size: 35px;
-  margin-left: 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .Top {
-  grid-row: 2;
-  align-self: end;
+  align-self: flex-start;
 }
 
 .Middle {
-  grid-row: 3;
+  align-self: center;
 }
 
 .Bottom {
-  grid-row: 4;
-  align-self: start;
+  align-self: flex-end;
+}
+
+.Label {
+  color: white;
+  font-size: 35px;
+  margin: 0 0 0 0;
+}
+
+@media only screen and (min-width:768px) {
+  .MediaButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-column: 10 / span 2;
+    z-index: 1;
+  }
+  
+  .Icon {
+    height: 40px;
+    fill: #2EFF90;
+    background-color: #1E1D1D;
+    border: 1.5px solid #2EFF90;
+    border-radius: 50%;
+    padding: 1rem;
+    overflow: visible;
+  }
+
+  .Label {
+    color: white;
+    font-size: 35px;
+    margin: 0 auto 0 2rem;
+  }
+  
+  .Top {
+    grid-row: 2;
+    align-self: end;
+  }
+  
+  .Middle {
+    grid-row: 3;
+  }
+  
+  .Bottom {
+    grid-row: 4;
+    align-self: start;
+  }
 }

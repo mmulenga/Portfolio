@@ -1,11 +1,23 @@
 .Section {
-  display: grid;
-  grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 
 .ContactSection {
-  display: grid;
-  grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:768px) {
+  .Section {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .ContactSection {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
 }

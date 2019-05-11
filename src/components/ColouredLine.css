@@ -6,11 +6,25 @@
   background-color: #2EFF90;
 
   border: none;
-  margin-left: 0;
-  margin-right: 0;
   margin-bottom: 0 !important;
+  align-self: flex-start;
 }
 
-.Right {
-  margin-left: auto;
+@media only screen and (min-width:768px) {
+  .ColouredLine {
+    width: 80%;
+    height: 8px;
+  
+    color: #2EFF90;
+    background-color: #2EFF90;
+  
+    border: none;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0 !important;
+  }
+  
+  .Right {
+    margin-left: auto;
+  }
 }

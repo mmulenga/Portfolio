@@ -1,20 +1,15 @@
 .Left {
-  grid-row: 1;
-  grid-column: 2 / span 2;
-
   margin-bottom: 4rem;
-  justify-self: start;
+  align-self: center;
   z-index: 1;
 }
 
 .Right {
   display: flex;
   flex-direction: column;
-  grid-row: 1;
-  grid-column: 11 / span 2;
 
   margin-bottom: 4rem;
-  align-items: flex-end;
+  align-self: center;
   z-index: 1;
 }
 
@@ -22,4 +17,32 @@
   font-size: 40px;
   color: white;
   margin-bottom: 0;
+}
+
+@media only screen and (min-width:768px) {
+  .Left {
+    grid-row: 1;
+    grid-column: 2 / span 2;
+  
+    margin-bottom: 4rem;
+    justify-self: start;
+    z-index: 1;
+  }
+  
+  .Right {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    grid-column: 11 / span 2;
+  
+    margin-bottom: 4rem;
+    align-items: flex-end;
+    z-index: 1;
+  }
+  
+  .SectionTitle {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 0;
+  }
 }

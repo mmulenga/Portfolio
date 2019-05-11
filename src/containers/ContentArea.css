@@ -1,12 +1,28 @@
 .Content-Area {
-  width: calc(100% - 4rem);
-  height: 100%;
+  width: 100%;
+  height: calc(100% - 3rem);
 
   overflow: auto;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 .Content-Area::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .Content-Area {
+    width: calc(100% - 4rem);
+    height: 100%;
+  
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .Content-Area::-webkit-scrollbar {
+    display: none;
+  }
 }

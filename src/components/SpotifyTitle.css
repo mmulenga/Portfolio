@@ -1,10 +1,22 @@
 .SpotifyTitle {
-  grid-row: 1;
-  grid-column: 2 / span 2;
-
   color: white;
   font-size: 20px;
-  align-self: end;
+  align-self: center;
+  margin-top: 3rem;
   margin-bottom: 1rem;
   z-index: 1;
+}
+
+@media only screen and (min-width:768px) {
+  .SpotifyTitle {
+    grid-row: 1;
+    grid-column: 2 / span 2;
+  
+    color: white;
+    font-size: 20px;
+    align-self: end;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
 }
