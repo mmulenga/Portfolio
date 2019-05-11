@@ -1,9 +1,11 @@
 import React from 'react';
 import './ColouredLine.css';
 
-function ColouredLine() {
+function ColouredLine(props) {
+  const { position } = props;
+
   return (
-    <hr className="ColouredLine" />
+    <hr className={`ColouredLine ${position}`} />
   );
 }
 

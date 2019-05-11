@@ -2,7 +2,11 @@
   width: 300px;
   height: 300px;
 
-  position: relative;
+  grid-row: 2;
+  grid-column: 11 / span 2;
+
+  justify-self: end;
 
   border-radius: 50%;
+  z-index: 1;
 }

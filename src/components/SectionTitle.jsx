@@ -7,10 +7,10 @@ function SectionTitle(props) {
 
   return (
     <div className={position}>
-      <h2 className="SectionTitleText">
+      <h2 className="SectionTitle">
         {name}
+        <ColouredLine position={position} />
       </h2>
-      <ColouredLine />
     </div>
   );
 }
