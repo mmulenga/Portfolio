@@ -1,5 +1,8 @@
 .Left {
+  grid-row: 1;
+  grid-column: 2 / span 3;
   margin-bottom: 4rem;
+  text-align: center;
   align-self: center;
   z-index: 1;
 }

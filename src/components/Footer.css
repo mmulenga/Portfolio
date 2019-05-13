@@ -1,6 +1,9 @@
 .FooterName {
-  align-self: center;
-
+  grid-row: 5;
+  grid-column: 1 / span 5;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 0rem;
   color: white;
   z-index: 1;
 }
@@ -16,7 +19,7 @@
   
     justify-self: center;
     align-self: end;
-  
+    margin-bottom: 1rem;
     color: white;
     z-index: 1;
   }
