@@ -1,9 +1,9 @@
 .MediaButton {
+  grid-row: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
-  grid-row: 5;
   z-index: 1;
 }
 
@@ -46,32 +46,36 @@
   display: none;
   color: white;
   font-size: 35px;
-  margin: 0 0 0 0;
+  margin: 0;
 }
 
 @media only screen and (min-width:768px) {
-  .MediaButton {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    grid-column: 10 / span 2;
-    z-index: 1;
+  .Top {
+    grid-column: 2 / span 3;
+    margin-right: 0;
   }
   
-  .Icon {
-    height: 40px;
-    fill: #2EFF90;
-    background-color: #1E1D1D;
-    border: 1.5px solid #2EFF90;
-    border-radius: 50%;
-    padding: 1rem;
-    overflow: visible;
+  .Middle {
+    grid-column: 6 / span 3;
+  }
+  
+  .Bottom {
+    grid-column: 10 / span 3;
+    margin-left: 0;
   }
 
   .Label {
     display: block;
-    color: white;
-    font-size: 35px;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .MediaButton {
+    grid-column: 10 / span 2;
+    flex-direction: row;
+  }
+
+  .Label {
     margin: 0 auto 0 2rem;
   }
   

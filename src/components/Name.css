@@ -25,24 +25,27 @@
 
 @media only screen and (min-width:768px) {
   .NameContainer {
-    grid-column: 6 / span 5;
-    grid-row: 2 / span 1;
-  
-    justify-self: start;
-    align-self: center;
-    text-align: left;
+    grid-column: 1 / span 13;
+    grid-row: 3 / span 1;
+    margin-bottom: 10rem;
   }
 
   .Name {
-    margin-left: 0;
-    margin-top: 0;
     font-size: 80px;
   }
   
   .Title {
     font-size: 30px;
-  
-    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .NameContainer {
+    grid-column: 5 / span 5;
+    grid-row: 2 / span 1;
+
+    align-self: center;
+    text-align: left;
     margin-bottom: 0;
   }
 }
