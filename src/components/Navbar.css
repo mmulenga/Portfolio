@@ -6,7 +6,7 @@
   height: 3rem;
 
   background-color: #1E1D1D;
-  z-index: 100;
+  z-index: 1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -19,6 +19,5 @@
     height: 100%;
   
     background-color: #1E1D1D;
-    z-index: 100;
   }
 }
