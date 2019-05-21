@@ -3,13 +3,13 @@ import ColouredLine from './ColouredLine';
 import './SectionTitle.css';
 
 function SectionTitle(props) {
-  const { name, position } = props;
+  const { name, position, colorScheme } = props;
 
   return (
     <div className={position}>
       <h2 className="SectionTitle">
         {name}
-        <ColouredLine position={position} />
+        <ColouredLine position={position} colorScheme={colorScheme} />
       </h2>
     </div>
   );

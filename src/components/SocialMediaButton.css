@@ -9,9 +9,6 @@
 
 .Icon {
   height: 40px;
-  fill: #2EFF90;
-  background-color: #1E1D1D;
-  border: 1.5px solid #2EFF90;
   border-radius: 50%;
   padding: 1rem;
   overflow: visible;
@@ -19,13 +16,46 @@
 
 .Icon:hover {
   cursor: pointer;
-  fill: #1E1D1D;
-  border-color: #1E1D1D;
-  background-color: #2EFF90;
 	-webkit-transition: 200ms;
 	-webkit-transition-timing-function: ease-in-out;
 	transition: 200ms;
 	transition-timing-function: ease-in-out;
+}
+
+.GreenIcon {
+  fill: #2EFF90;
+  background-color: #1E1D1D;
+  border: 1.5px solid #2EFF90;
+}
+
+.GreenIcon:hover {
+  fill: #1E1D1D;
+  border-color: #1E1D1D;
+  background-color: #2EFF90;
+}
+
+.BlueIcon {
+  fill: #5EDCFF;
+  background-color: #1E1D1D;
+  border: 1.5px solid #5EDCFF;
+}
+
+.BlueIcon:hover {
+  fill: #1E1D1D;
+  border-color: #1E1D1D;
+  background-color: #5EDCFF;
+}
+
+.YellowIcon {
+  fill: #FFF056;
+  background-color: #1E1D1D;
+  border: 1.5px solid #FFF056;
+}
+
+.YellowIcon:hover {
+  fill: #1E1D1D;
+  border-color: #1E1D1D;
+  background-color: #FFF056;
 }
 
 .Top {

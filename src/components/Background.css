@@ -1,6 +1,12 @@
 .Particle-Canvas {
   display: block;
   background: #0E0C0C;
-  position: fixed;
-  /*z-index: -100;*/
+  position: absolute;
+  z-index: -1;
+}
+
+@media only screen and (min-width:768px) {
+  .Particle-Canvas {
+    width: 100% !important;
+  }
 }
