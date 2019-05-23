@@ -2,10 +2,15 @@ import React from 'react';
 import './NavButton.css';
 
 function NavButton(props) {
-  const { children } = props;
+  const { handleClick, id, children } = props;
+
+  function handleClickEvent(e) {
+    e.stopPropagation();
+    handleClick(id);
+  }
 
   return (
-    <button className="NavButton" type="button">
+    <button onClick={handleClickEvent} className="NavButton" type="button">
       {children}
     </button>
   );

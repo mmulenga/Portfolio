@@ -1,28 +1,48 @@
 import React from 'react';
-import home from '../images/home.svg';
-import projects from '../images/scatter.svg';
-import about from '../images/person.svg';
-import contact from '../images/email.svg';
 import NavButton from './NavButton';
 import './Navbar.css';
 
-function Navbar() {
-  return (
-    <div className="Navbar">
-      <NavButton>
-        <object data={home} type="image/svg+xml" aria-label="Home" />
-      </NavButton>
-      <NavButton>
-        <object data={projects} type="image/svg+xml" aria-label="Home" />
-      </NavButton>
-      <NavButton>
-        <object data={about} type="image/svg+xml" aria-label="Home" />
-      </NavButton>
-      <NavButton>
-        <object data={contact} type="image/svg+xml" aria-label="Home" />
-      </NavButton>
-    </div>
-  );
+import { ReactComponent as HomeIcon } from '../images/home.svg';
+import { ReactComponent as ProjectIcon } from '../images/scatter.svg';
+import { ReactComponent as AboutIcon } from '../images/person.svg';
+import { ReactComponent as ContactIcon } from '../images/email.svg';
+
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedButton: 'home', colorScheme: props.colorScheme };
+  }
+
+  handleClick = (id) => {
+    if (id === 'home') {
+      console.log(id);
+    } else if (id === 'p') {
+      console.log(id);
+    } else if (id === 'a') {
+      console.log(id);
+    } else {
+      console.log(id);
+    }
+  }
+
+  render() {
+    return (
+      <div className="Navbar">
+        <NavButton id="home" handleClick={this.handleClick}>
+          <HomeIcon />
+        </NavButton>
+        <NavButton id="projects" handleClick={this.handleClick}>
+          <ProjectIcon />
+        </NavButton>
+        <NavButton id="about" handleClick={this.handleClick}>
+          <AboutIcon />
+        </NavButton>
+        <NavButton id="contact" handleClick={this.handleClick}>
+          <ContactIcon />
+        </NavButton>
+      </div>
+    );
+  }
 }
 
 export default Navbar;
