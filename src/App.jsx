@@ -24,6 +24,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { colorScheme: '#5EDCFF', buttonColorClass: 'BlueIcon' };
+
+    this.landingSectionRef = React.createRef();
+    this.projectSectionRef = React.createRef();
+    this.aboutSectionRef = React.createRef();
+    this.contactSectionRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.projectSectionRef.current.scrollTo(0, 0);
+  }
+
+  scrollToSection = () => {
+    console.log('stub');
   }
 
   setColor = (color) => {
@@ -42,22 +55,22 @@ class App extends React.Component {
     return (
       <div className="App">
         <Background colorScheme={this.state.colorScheme} />
-        <Navbar />
+        <Navbar colorScheme={this.state.colorScheme} />
         <ContentArea>
-          <Landing colorScheme={this.state.colorScheme} />
-          <Section type="Section">
+          <Landing ref={this.landingSectionRef} colorScheme={this.state.colorScheme} />
+          <Section ref={this.projectSectionRef} type="Section">
             <SectionTitle name="Projects" position="Left" colorScheme={this.state.colorScheme} />
             <ProjectButton name="Project-1" />
             <ProjectButton name="Project-2" />
             <ProjectButton name="Project-3" />
           </Section>
-          <Section type="Section">
+          <Section ref={this.aboutSectionRef} type="Section">
             <SectionTitle name="About Me" position="Right" colorScheme={this.state.colorScheme} />
             <About />
             <SpotifyTitle />
             <SpotifyWidget />
           </Section>
-          <Section type="ContactSection">
+          <Section ref={this.contactSectionRef} type="ContactSection">
             <SectionTitle name="Contact" position="Left" colorScheme={this.state.colorScheme} />
             <Contact colorScheme={this.state.colorScheme} />
             <SocialMediaButton alternative="Send me an email!" label="Email" position="Top">

@@ -4,6 +4,10 @@
   background-color: #1E1D1D;
 }
 
+.NavButton > * {
+  pointer-events: none;
+}
+
 
 @media only screen and (min-width: 768px) {
   .NavButton {

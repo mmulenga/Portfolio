@@ -10,35 +10,54 @@ import { ReactComponent as ContactIcon } from '../images/email.svg';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedButton: 'home', colorScheme: props.colorScheme };
+
+    this.state = { selectedButton: 'home' };
+
+    this.homeRef = React.createRef();
+    this.projectRef = React.createRef();
+    this.aboutRef = React.createRef();
+    this.contactRef = React.createRef();
+
+    // A dictionary for associating, ids and refs. (Bruteforce method)
+    this.dict = new Map();
   }
 
-  handleClick = (id) => {
-    if (id === 'home') {
-      console.log(id);
-    } else if (id === 'p') {
-      console.log(id);
-    } else if (id === 'a') {
-      console.log(id);
-    } else {
-      console.log(id);
-    }
+  componentDidMount() {
+    this.dict.set('home', this.homeRef);
+    this.dict.set('project', this.projectRef);
+    this.dict.set('about', this.aboutRef);
+    this.dict.set('contact', this.contactRef);
+    
+    this.homeRef.current.style.fill = this.props.colorScheme;
+  }
+
+  setSelectedButton = (target) => {
+    // Reset the color of the old button.
+    this.dict.get(this.state.selectedButton).current.style.fill = "black";
+    // Update the color of the selected button.
+    this.dict.get(target.id).current.style.fill = this.props.colorScheme;
+
+    this.setState({ selectedButton: target.id});
+  }
+
+  handleClick = (target) => {
+    this.setSelectedButton(target);
   }
 
   render() {
     return (
       <div className="Navbar">
         <NavButton id="home" handleClick={this.handleClick}>
-          <HomeIcon />
+          <HomeIcon ref={this.homeRef} />
         </NavButton>
-        <NavButton id="projects" handleClick={this.handleClick}>
-          <ProjectIcon />
+        <NavButton id="project" handleClick={this.handleClick}>
+          <ProjectIcon ref={this.projectRef} />
         </NavButton>
         <NavButton id="about" handleClick={this.handleClick}>
-          <AboutIcon />
+          <AboutIcon ref={this.aboutRef} />
         </NavButton>
         <NavButton id="contact" handleClick={this.handleClick}>
-          <ContactIcon />
+          <ContactIcon ref={this.contactRef} />
         </NavButton>
       </div>
     );

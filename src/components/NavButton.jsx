@@ -1,19 +1,19 @@
 import React from 'react';
 import './NavButton.css';
 
-function NavButton(props) {
-  const { handleClick, id, children } = props;
-
-  function handleClickEvent(e) {
+class NavButton extends React.Component {
+  handleClickEvent = (target, e) => {
     e.stopPropagation();
-    handleClick(id);
+    this.props.handleClick(target);
   }
 
-  return (
-    <button onClick={handleClickEvent} className="NavButton" type="button">
-      {children}
-    </button>
-  );
+  render() {
+    return (
+      <button id={this.props.id} onClick={(e) => this.handleClickEvent(e.target, e)} className="NavButton" type="button">
+        {this.props.children}
+      </button>
+    );
+  }
 }
 
 export default NavButton;
