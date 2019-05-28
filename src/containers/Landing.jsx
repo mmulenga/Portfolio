@@ -3,15 +3,15 @@ import Portrait from '../components/Portrait';
 import Name from '../components/Name';
 import './Landing.css';
 
-class Landing extends React.Component {
-  render() {
-    return (
-      <div className="Landing">
-        <Portrait />
-        <Name colorScheme={this.props.colorScheme} />
-      </div>
-    );
-  }
+function Landing(props) {
+  const { forwardedRef, colorScheme } = props;
+
+  return (
+    <div ref={forwardedRef} className="Landing">
+      <Portrait />
+      <Name colorScheme={colorScheme} />
+    </div>
+  );
 }
 
-export default Landing;
+export default React.forwardRef((props, ref) => <Landing forwardedRef={ref} {...props} />);

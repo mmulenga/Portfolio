@@ -1,14 +1,14 @@
 import React from 'react';
 import './Section.css';
 
-class Section extends React.Component {
-  render() {
-    return (
-      <div className={this.props.type}>
-        {this.props.children}
-      </div>
-    );
-  }
+function Section(props) {
+  const { forwardedRef, type, children } = props;
+
+  return (
+    <div ref={forwardedRef} className={type}>
+      {children}
+    </div>
+  );
 }
 
-export default Section;
+export default React.forwardRef((props, ref) => <Section forwardedRef={ref} {...props} />);

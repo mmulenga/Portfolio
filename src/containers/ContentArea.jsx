@@ -2,13 +2,17 @@ import React from 'react';
 import './ContentArea.css';
 
 function ContentArea(props) {
-  const { children } = props;
+  const { forwardedRef, setTargetSection, children } = props;
+
+  function handleScroll() {
+    setTargetSection(forwardedRef.current.scrollTop);
+  }
 
   return (
-    <div className="Content-Area">
+    <div ref={forwardedRef} className="Content-Area" onScroll={handleScroll}>
       {children}
     </div>
   );
 }
 
-export default ContentArea;
+export default React.forwardRef((props, ref) => <ContentArea forwardedRef={ref} {...props} />);

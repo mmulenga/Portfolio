@@ -23,20 +23,27 @@ import { ReactComponent as LinkedIcon } from './images/linkedin.svg';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { colorScheme: '#5EDCFF', buttonColorClass: 'BlueIcon' };
+    this.state = { colorScheme: '#5EDCFF', buttonColorClass: 'BlueIcon', targetSection: 'home' };
 
+    this.contentAreaRef = React.createRef();
     this.landingSectionRef = React.createRef();
     this.projectSectionRef = React.createRef();
     this.aboutSectionRef = React.createRef();
     this.contactSectionRef = React.createRef();
+
+    this.dict = new Map();
   }
 
   componentDidMount() {
-    this.projectSectionRef.current.scrollTo(0, 0);
+    // This will need to be refactored to some more elegant/efficient process.
+    this.dict.set('home', this.landingSectionRef);
+    this.dict.set('project', this.projectSectionRef);
+    this.dict.set('about', this.aboutSectionRef);
+    this.dict.set('contact', this.contactSectionRef);
   }
 
-  scrollToSection = () => {
-    console.log('stub');
+  scrollToSection = (section) => {
+    this.contentAreaRef.current.scrollTo({ top: this.dict.get(section).current.offsetTop, behavior: 'smooth'});
   }
 
   setColor = (color) => {
@@ -51,12 +58,33 @@ class App extends React.Component {
     }
   }
 
+  setTargetSection = (position) => {
+    if (this.inRange(position, 0, this.projectSectionRef.current.offsetTop) &&
+        this.state.targetSection !== 'home') {
+          this.setState({targetSection: 'home'});
+    } else if (this.inRange(position, this.projectSectionRef.current.offsetTop, this.aboutSectionRef.current.offsetTop) && 
+        this.state.targetSection !== 'project') {
+          this.setState({targetSection: 'project'});
+    } else if (this.inRange(position, this.aboutSectionRef.current.offsetTop, this.contactSectionRef.current.offsetTop) &&
+        this.state.targetSection !== 'about') {
+          this.setState({targetSection: 'about'});
+    } else if (this.inRange(position, this.contactSectionRef.current.offsetTop, this.contactSectionRef.current.offsetTop +
+       this.contactSectionRef.current.offsetHeight) &&
+        this.state.targetSection !== 'contact') {
+          this.setState({targetSection: 'contact'});
+    }
+  }
+  
+  inRange = (value, min, max) => {
+    return (value >= min / 1.25 && value <= max / 1.25);
+  }
+
   render() {
     return (
       <div className="App">
         <Background colorScheme={this.state.colorScheme} />
-        <Navbar colorScheme={this.state.colorScheme} />
-        <ContentArea>
+        <Navbar scrollToSection={this.scrollToSection} targetSection={this.state.targetSection} colorScheme={this.state.colorScheme} />
+        <ContentArea ref={this.contentAreaRef} setTargetSection={this.setTargetSection}>
           <Landing ref={this.landingSectionRef} colorScheme={this.state.colorScheme} />
           <Section ref={this.projectSectionRef} type="Section">
             <SectionTitle name="Projects" position="Left" colorScheme={this.state.colorScheme} />
@@ -73,13 +101,13 @@ class App extends React.Component {
           <Section ref={this.contactSectionRef} type="ContactSection">
             <SectionTitle name="Contact" position="Left" colorScheme={this.state.colorScheme} />
             <Contact colorScheme={this.state.colorScheme} />
-            <SocialMediaButton alternative="Send me an email!" label="Email" position="Top">
+            <SocialMediaButton href="mailto:matt.mulengawoo@gmail.com"alternative="Send me an email!" label="Email" position="Top">
               <EmailIcon className={`Icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
-            <SocialMediaButton alternative="My GitHub account!" label="GitHub" position="Middle">
+            <SocialMediaButton href="https://github.com/mmulenga" alternative="My GitHub account!" label="GitHub" position="Middle">
               <GitIcon className={`Icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
-            <SocialMediaButton alternative="My LinkedIn account!" label="LinkedIn" position="Bottom">
+            <SocialMediaButton href="https://www.linkedin.com/in/matthew-mulenga/" alternative="My LinkedIn account!" label="LinkedIn" position="Bottom">
               <LinkedIcon className={`Icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
             <Footer colorScheme={this.state.colorScheme} />

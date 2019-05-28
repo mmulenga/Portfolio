@@ -31,17 +31,25 @@ class Navbar extends React.Component {
     this.homeRef.current.style.fill = this.props.colorScheme;
   }
 
+  componentDidUpdate() {
+    if (this.props.targetSection !== this.state.selectedButton) {
+      this.setSelectedButton(this.props.targetSection);
+    }
+  }
+
+  // Takes the id of the target and it's color
   setSelectedButton = (target) => {
     // Reset the color of the old button.
     this.dict.get(this.state.selectedButton).current.style.fill = "black";
     // Update the color of the selected button.
-    this.dict.get(target.id).current.style.fill = this.props.colorScheme;
+    this.dict.get(target).current.style.fill = this.props.colorScheme;
 
-    this.setState({ selectedButton: target.id});
+    this.setState({ selectedButton: target});
   }
 
   handleClick = (target) => {
-    this.setSelectedButton(target);
+    this.setSelectedButton(target.id);
+    this.props.scrollToSection(target.id);
   }
 
   render() {
