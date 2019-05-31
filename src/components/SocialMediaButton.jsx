@@ -6,7 +6,7 @@ function SocialMediaButton(props) {
 
   return (
     <div className={`MediaButton ${position} ${colorScheme}`}>
-      <a href={href}>
+      <a href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
       <p className="Label">

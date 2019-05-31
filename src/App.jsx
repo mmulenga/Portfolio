@@ -23,7 +23,11 @@ import { ReactComponent as LinkedIcon } from './images/linkedin.svg';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { colorScheme: '#5EDCFF', buttonColorClass: 'BlueIcon', targetSection: 'home' };
+    this.state = {
+      colorScheme: '#5EDCFF',
+      buttonColorClass: 'BlueIcon',
+      targetSection: 'home' 
+    };
 
     this.contentAreaRef = React.createRef();
     this.landingSectionRef = React.createRef();
@@ -83,7 +87,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Background colorScheme={this.state.colorScheme} />
-        <Navbar scrollToSection={this.scrollToSection} targetSection={this.state.targetSection} colorScheme={this.state.colorScheme} />
+        <Navbar 
+          scrollToSection={this.scrollToSection}
+          targetSection={this.state.targetSection}
+          colorScheme={this.state.colorScheme} />
         <ContentArea ref={this.contentAreaRef} setTargetSection={this.setTargetSection}>
           <Landing ref={this.landingSectionRef} colorScheme={this.state.colorScheme} />
           <Section ref={this.projectSectionRef} type="Section">
@@ -101,13 +108,24 @@ class App extends React.Component {
           <Section ref={this.contactSectionRef} type="ContactSection">
             <SectionTitle name="Contact" position="Left" colorScheme={this.state.colorScheme} />
             <Contact colorScheme={this.state.colorScheme} />
-            <SocialMediaButton href="mailto:matt.mulengawoo@gmail.com"alternative="Send me an email!" label="Email" position="Top">
+            <SocialMediaButton href="mailto:matt.mulengawoo@gmail.com" 
+              alternative="Send me an email!" 
+              label="Email" 
+              position="Top">
               <EmailIcon className={`Icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
-            <SocialMediaButton href="https://github.com/mmulenga" alternative="My GitHub account!" label="GitHub" position="Middle">
+            <SocialMediaButton 
+              href="https://github.com/mmulenga"
+              alternative="My GitHub account!"
+              label="GitHub"
+              position="Middle">
               <GitIcon className={`Icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
-            <SocialMediaButton href="https://www.linkedin.com/in/matthew-mulenga/" alternative="My LinkedIn account!" label="LinkedIn" position="Bottom">
+            <SocialMediaButton
+              href="https://www.linkedin.com/in/matthew-mulenga/"
+              alternative="My LinkedIn account!"
+              label="LinkedIn"
+              position="Bottom">
               <LinkedIcon className={`Icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
             <Footer colorScheme={this.state.colorScheme} />

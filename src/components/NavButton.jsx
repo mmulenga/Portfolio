@@ -9,7 +9,13 @@ class NavButton extends React.Component {
 
   render() {
     return (
-      <button id={this.props.id} onClick={(e) => this.handleClickEvent(e.target, e)} className="NavButton" type="button">
+      // preventDefault() to get rid of focus when clicking on buttons, maintains accessibility when using keyboard.
+      <button id={this.props.id} 
+      onClick={(e) => this.handleClickEvent(e.target, e)} 
+      onMouseDown={(e) => e.preventDefault()} 
+      className="NavButton" 
+      type="button"
+      style={this.props.style}>
         {this.props.children}
       </button>
     );

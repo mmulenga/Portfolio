@@ -1,6 +1,5 @@
 .Content-Area {
   width: 100%;
-  height: calc(100% - 3rem);
 
   overflow: auto;
   overflow-x: hidden;

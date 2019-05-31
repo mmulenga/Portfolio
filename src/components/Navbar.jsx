@@ -2,6 +2,8 @@ import React from 'react';
 import NavButton from './NavButton';
 import './Navbar.css';
 
+import { ReactComponent as BarIcon} from '../images/bar.svg';
+import { ReactComponent as ExitIcon} from '../images/exit.svg';
 import { ReactComponent as HomeIcon } from '../images/home.svg';
 import { ReactComponent as ProjectIcon } from '../images/scatter.svg';
 import { ReactComponent as AboutIcon } from '../images/person.svg';
@@ -11,7 +13,20 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { selectedButton: 'home' };
+    this.state = { 
+      selectedButton: 'home',
+      isMobile: window.innerWidth < 768,
+      navbarDisplay: {
+        display: '',
+      },
+      menuBarDisplay: {
+        display: 'block',
+        color: this.props.colorScheme, 
+      },
+      closeButtonDisplay: {
+        display: 'none',
+      }
+    };
 
     this.homeRef = React.createRef();
     this.projectRef = React.createRef();
@@ -23,6 +38,9 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.resize);
+    this.resize();
+
     this.dict.set('home', this.homeRef);
     this.dict.set('project', this.projectRef);
     this.dict.set('about', this.aboutRef);
@@ -36,6 +54,46 @@ class Navbar extends React.Component {
       this.setSelectedButton(this.props.targetSection);
     }
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
+  }
+
+  resize = () => {
+    const m = (window.innerWidth < 768);
+
+    if (m !== this.state.isMobile) {
+        this.setState({isMobile: m});
+    }
+    
+    if (this.state.isMobile) {
+      this.setState({
+        navbarDisplay: {
+          display: 'none'
+        },
+        menuBarDisplay: {
+          display: 'block',
+          color: this.props.colorScheme,
+        },
+        closeButtonDisplay: {
+          display: 'none',
+        }
+      });
+    } else {
+      this.setState({ 
+        navbarDisplay: {
+          display: 'block'
+        },
+        menuBarDisplay: {
+          display: 'none'
+        },
+        closeButtonDisplay: {
+          display: 'none',
+        } 
+      });
+    }
+  }
+
 
   // Takes the id of the target and it's color
   setSelectedButton = (target) => {
@@ -52,22 +110,58 @@ class Navbar extends React.Component {
     this.props.scrollToSection(target.id);
   }
 
+  handleBarClick = (e) => {
+    e.stopPropagation();
+
+    if (this.state.navbarDisplay.display === 'block') {
+      this.setState({ 
+        navbarDisplay: {
+          display: 'none'
+        },
+        menuBarDisplay: {
+          display: 'block',
+          color: this.props.colorScheme,
+        },
+        closeButtonDisplay: {
+          display: 'none'
+        } 
+      });
+    } else {
+      this.setState({ 
+        navbarDisplay: {
+          display: 'block'
+        },
+        menuBarDisplay: {
+          display: 'none'
+        },
+        closeButtonDisplay: {
+          display: 'block',
+          fill: this.props.colorScheme,
+        } 
+      });
+    }
+  }
+
   render() {
     return (
-      <div className="Navbar">
-        <NavButton id="home" handleClick={this.handleClick}>
-          <HomeIcon ref={this.homeRef} />
-        </NavButton>
-        <NavButton id="project" handleClick={this.handleClick}>
-          <ProjectIcon ref={this.projectRef} />
-        </NavButton>
-        <NavButton id="about" handleClick={this.handleClick}>
-          <AboutIcon ref={this.aboutRef} />
-        </NavButton>
-        <NavButton id="contact" handleClick={this.handleClick}>
-          <ContactIcon ref={this.contactRef} />
-        </NavButton>
-      </div>
+      <React.Fragment>
+        <div className="Navbar">
+          <BarIcon className="Menubar" onClick={(e) => this.handleBarClick(e)} style={this.state.menuBarDisplay} />
+          <ExitIcon className="CloseButton" onClick={(e) => this.handleBarClick(e)} style={this.state.closeButtonDisplay} />
+          <NavButton id="home" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+            <HomeIcon ref={this.homeRef} />
+          </NavButton>
+          <NavButton id="project" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+            <ProjectIcon ref={this.projectRef} />
+          </NavButton>
+          <NavButton id="about" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+            <AboutIcon ref={this.aboutRef} />
+          </NavButton>
+          <NavButton id="contact" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+            <ContactIcon ref={this.contactRef} />
+          </NavButton>
+        </div>
+      </React.Fragment>
     );
   }
 }
