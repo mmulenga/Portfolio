@@ -20,13 +20,16 @@ import { ReactComponent as EmailIcon } from './images/envelope.svg';
 import { ReactComponent as GitIcon } from './images/github.svg';
 import { ReactComponent as LinkedIcon } from './images/linkedin.svg';
 
+import bab from './images/bab.jpg';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       colorScheme: '#5EDCFF',
       buttonColorClass: 'BlueIcon',
-      targetSection: 'home' 
+      targetSection: 'home',
+      isMobile: window.innerWidth < 768, 
     };
 
     this.contentAreaRef = React.createRef();
@@ -39,11 +42,27 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('resize', this.resize);
+    this.resize();
     // This will need to be refactored to some more elegant/efficient process.
     this.dict.set('home', this.landingSectionRef);
     this.dict.set('project', this.projectSectionRef);
     this.dict.set('about', this.aboutSectionRef);
     this.dict.set('contact', this.contactSectionRef);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
+  }
+
+  resize = () => {
+    const m = (window.innerWidth < 768);
+
+    if (m !== this.state.isMobile) {
+      this.setState({
+        isMobile: m
+      });
+    }
   }
 
   scrollToSection = (section) => {
@@ -90,14 +109,16 @@ class App extends React.Component {
         <Navbar 
           scrollToSection={this.scrollToSection}
           targetSection={this.state.targetSection}
-          colorScheme={this.state.colorScheme} />
+          colorScheme={this.state.colorScheme}
+          isMobile={this.state.isMobile}
+          resize={this.resize} />
         <ContentArea ref={this.contentAreaRef} setTargetSection={this.setTargetSection}>
           <Landing ref={this.landingSectionRef} colorScheme={this.state.colorScheme} />
           <Section ref={this.projectSectionRef} type="Section">
             <SectionTitle name="Projects" position="Left" colorScheme={this.state.colorScheme} />
-            <ProjectButton name="Project-1" />
-            <ProjectButton name="Project-2" />
-            <ProjectButton name="Project-3" />
+            <ProjectButton className="Project Project-1" src={bab} isMobile={this.state.isMobile} />
+            <ProjectButton className="Project Project-2" src={bab} isMobile={this.state.isMobile} />
+            <ProjectButton className="Project Project-3" src={bab} isMobile={this.state.isMobile} />
           </Section>
           <Section ref={this.aboutSectionRef} type="Section">
             <SectionTitle name="About Me" position="Right" colorScheme={this.state.colorScheme} />

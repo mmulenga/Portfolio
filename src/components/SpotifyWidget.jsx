@@ -9,6 +9,7 @@ function SpotifyWidget() {
         width="300"
         height="380"
         frameBorder="0"
+        // eslint-disable-next-line react/no-unknown-property
         allowtransparency="true"
         allow="encrypted-media"
         title="Spotify"

@@ -15,7 +15,7 @@ class Navbar extends React.Component {
 
     this.state = { 
       selectedButton: 'home',
-      isMobile: window.innerWidth < 768,
+      isMobile: '',
       navbarDisplay: {
         display: '',
       },
@@ -38,8 +38,7 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.resize);
-    this.resize();
+    this.updateNav();
 
     this.dict.set('home', this.homeRef);
     this.dict.set('project', this.projectRef);
@@ -50,47 +49,44 @@ class Navbar extends React.Component {
   }
 
   componentDidUpdate() {
+    this.updateNav();
+
     if (this.props.targetSection !== this.state.selectedButton) {
       this.setSelectedButton(this.props.targetSection);
     }
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.resize);
-  }
-
-  resize = () => {
-    const m = (window.innerWidth < 768);
-
-    if (m !== this.state.isMobile) {
-        this.setState({isMobile: m});
-    }
-    
-    if (this.state.isMobile) {
-      this.setState({
-        navbarDisplay: {
-          display: 'none'
-        },
-        menuBarDisplay: {
-          display: 'block',
-          color: this.props.colorScheme,
-        },
-        closeButtonDisplay: {
-          display: 'none',
-        }
-      });
-    } else {
-      this.setState({ 
-        navbarDisplay: {
-          display: 'block'
-        },
-        menuBarDisplay: {
-          display: 'none'
-        },
-        closeButtonDisplay: {
-          display: 'none',
-        } 
-      });
+  updateNav = () => {
+    if (this.state.isMobile !== this.props.isMobile) {
+      if (this.props.isMobile) {
+        this.setState({
+          isMobile: this.props.isMobile, // This is used as a guard for componentDidUpdate()
+          navbarDisplay: {
+            display: 'none'
+          },
+          menuBarDisplay: {
+            display: 'block',
+            color: this.props.colorScheme,
+          },
+          closeButtonDisplay: {
+            display: 'none',
+          }
+        });
+      }
+      else {
+        this.setState({ 
+          isMobile: this.props.isMobile,
+          navbarDisplay: {
+            display: 'block'
+          },
+          menuBarDisplay: {
+            display: 'none'
+          },
+          closeButtonDisplay: {
+            display: 'none',
+          } 
+        });
+      }
     }
   }
 
