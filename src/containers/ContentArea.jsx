@@ -9,7 +9,7 @@ function ContentArea(props) {
   }
 
   return (
-    <div ref={forwardedRef} className="Content-Area" onScroll={handleScroll}>
+    <div ref={forwardedRef} className="content-area" onScroll={handleScroll}>
       {children}
     </div>
   );

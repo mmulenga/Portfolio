@@ -3,7 +3,7 @@ import './SpotifyTitle.css';
 
 function SpotifyTitle() {
   return (
-    <div className="SpotifyTitle"> What I&apos;m listening to... </div>
+    <div className="spotify-title"> What I&apos;m listening to... </div>
   );
 }
 

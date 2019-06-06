@@ -1,0 +1,86 @@
+.project-modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3 ;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #1E1D1D;
+}
+
+.modal-exit {
+  position: absolute;
+  height: 2rem;
+  align-self: flex-end;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  fill: #5EDCFF;
+}
+
+.modal-image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 35%;
+  overflow: hidden;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.75);
+}
+
+.modal-image {
+  width: 115%;
+  height: auto;
+}
+
+.modal-project-name {
+  align-self: center;
+  text-align: center;
+  margin-bottom: 0;
+  width: auto;
+}
+
+.modal-project-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: #1E1D1D;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #5EDCFF;
+  width: 8rem;
+  height: 3rem;
+  border: none;
+}
+
+.modal-button-image {
+  width: 1rem;
+  height: auto;
+}
+
+.modal-button-text {
+  align-self: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1rem;
+}

@@ -13,7 +13,7 @@ class NavButton extends React.Component {
       <button id={this.props.id} 
       onClick={(e) => this.handleClickEvent(e.target, e)} 
       onMouseDown={(e) => e.preventDefault()} 
-      className="NavButton" 
+      className="nav-button" 
       type="button"
       style={this.props.style}>
         {this.props.children}

@@ -4,7 +4,7 @@ import './Portrait.css';
 
 function Portrait() {
   return (
-    <img className="Portrait" src={me} alt="It's me Matt!" />
+    <img className="portrait" src={me} alt="It's me Matt!" />
   );
 }
 

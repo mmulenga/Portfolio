@@ -11,6 +11,8 @@ import SpotifyWidget from './components/SpotifyWidget';
 import Contact from './components/Contact';
 import SocialMediaButton from './components/SocialMediaButton';
 import Footer from './components/Footer';
+import ProjectModal from './components/ProjectModal';
+import Modal from './components/Modal';
 
 import ContentArea from './containers/ContentArea';
 import Landing from './containers/Landing';
@@ -27,11 +29,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       colorScheme: '#5EDCFF',
-      buttonColorClass: 'BlueIcon',
+      buttonColorClass: 'blue-icon',
       targetSection: 'home',
       isMobile: window.innerWidth < 768, 
     };
 
+    this.appRef = React.createRef();
     this.contentAreaRef = React.createRef();
     this.landingSectionRef = React.createRef();
     this.projectSectionRef = React.createRef();
@@ -73,11 +76,11 @@ class App extends React.Component {
     this.setState({ colorScheme: color });
 
     if (color === '#5EDCFF') {
-      this.setState({ buttonColorClass: 'BlueIcon'});
+      this.setState({ buttonColorClass: 'blue-icon'});
     } else if (color === '#FFF056') {
-      this.setState({ buttonColorClass: 'YellowIcon'});
+      this.setState({ buttonColorClass: 'yellow-icon'});
     } else {
-      this.setState({ buttonColorClass: 'GreenIcon'});
+      this.setState({ buttonColorClass: 'green-icon'});
     }
   }
 
@@ -104,7 +107,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div id="app" ref={this.appRef} className="app">
         <Background colorScheme={this.state.colorScheme} />
         <Navbar 
           scrollToSection={this.scrollToSection}
@@ -114,40 +117,55 @@ class App extends React.Component {
           resize={this.resize} />
         <ContentArea ref={this.contentAreaRef} setTargetSection={this.setTargetSection}>
           <Landing ref={this.landingSectionRef} colorScheme={this.state.colorScheme} />
-          <Section ref={this.projectSectionRef} type="Section">
-            <SectionTitle name="Projects" position="Left" colorScheme={this.state.colorScheme} />
-            <ProjectButton className="Project Project-1" src={bab} isMobile={this.state.isMobile} />
-            <ProjectButton className="Project Project-2" src={bab} isMobile={this.state.isMobile} />
-            <ProjectButton className="Project Project-3" src={bab} isMobile={this.state.isMobile} />
+          <Section ref={this.projectSectionRef} type="generic-section">
+            <SectionTitle name="Projects" position="left" colorScheme={this.state.colorScheme} />
+            <ProjectButton className="project-1" title="ByAccidentBot" src={bab} isMobile={this.state.isMobile} />
+            <ProjectButton className="project-2" title="Pre-Op App" src={bab} isMobile={this.state.isMobile} />
+            <ProjectButton className="project-3" title="Volunteerize" src={bab} isMobile={this.state.isMobile} />
+            <Modal>
+              <ProjectModal 
+              projectName="By-Accident-Bot"
+              position="Left"
+              colorScheme={this.state.colorScheme}
+              src={bab}
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum." />
+            </Modal>
           </Section>
-          <Section ref={this.aboutSectionRef} type="Section">
-            <SectionTitle name="About Me" position="Right" colorScheme={this.state.colorScheme} />
+          <Section ref={this.aboutSectionRef} type="generic-section">
+            <SectionTitle name="About Me" position="right" colorScheme={this.state.colorScheme} />
             <About />
             <SpotifyTitle />
             <SpotifyWidget />
           </Section>
-          <Section ref={this.contactSectionRef} type="ContactSection">
-            <SectionTitle name="Contact" position="Left" colorScheme={this.state.colorScheme} />
+          <Section ref={this.contactSectionRef} type="contact-section">
+            <SectionTitle name="Contact" position="left" colorScheme={this.state.colorScheme} />
             <Contact colorScheme={this.state.colorScheme} />
             <SocialMediaButton href="mailto:matt.mulengawoo@gmail.com" 
               alternative="Send me an email!" 
               label="Email" 
-              position="Top">
-              <EmailIcon className={`Icon ${this.state.buttonColorClass}`} />
+              position="top">
+              <EmailIcon className={`icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
             <SocialMediaButton 
               href="https://github.com/mmulenga"
               alternative="My GitHub account!"
               label="GitHub"
-              position="Middle">
-              <GitIcon className={`Icon ${this.state.buttonColorClass}`} />
+              position="middle">
+              <GitIcon className={`icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
             <SocialMediaButton
               href="https://www.linkedin.com/in/matthew-mulenga/"
               alternative="My LinkedIn account!"
               label="LinkedIn"
-              position="Bottom">
-              <LinkedIcon className={`Icon ${this.state.buttonColorClass}`} />
+              position="bottom">
+              <LinkedIcon className={`icon ${this.state.buttonColorClass}`} />
             </SocialMediaButton>
             <Footer colorScheme={this.state.colorScheme} />
           </Section>

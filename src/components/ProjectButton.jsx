@@ -35,17 +35,16 @@ class ProjectButton extends React.Component {
   render() {
     return (
       <div 
-        className="AspectRatio" 
-        onClick={(e) => this.handleClick(e)} 
-        onMouseEnter={this.handleHover} 
-        onMouseLeave={this.handleHover} 
-        onFocus={this.handleHover}
-        onBlur={this.handleHover}
-      >
-        <button type="button" className="ProjectInfo" style={this.state.toggleInfoDisplay}>
-          <p> Hello, how are you doing? </p>
+      className={`${this.props.className} project project-button`} 
+      onClick={(e) => this.handleClick(e)} 
+      onMouseEnter={this.handleHover} 
+      onMouseLeave={this.handleHover} 
+      onFocus={this.handleHover}
+      onBlur={this.handleHover}>
+        <button type="button" className="project-name" style={this.state.toggleInfoDisplay}>
+          <p> {this.props.title} </p>
         </button>
-        <img className={this.props.className} src={this.props.src} alt="It's me Matt!" />
+        <img className="project" src={this.props.src} alt="It's me Matt!" />
       </div>
     );
   }

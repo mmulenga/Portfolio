@@ -141,9 +141,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="Navbar">
-          <BarIcon className="Menubar" onClick={(e) => this.handleBarClick(e)} style={this.state.menuBarDisplay} />
-          <ExitIcon className="CloseButton" onClick={(e) => this.handleBarClick(e)} style={this.state.closeButtonDisplay} />
+        <div className="navbar">
+          <BarIcon className="menubar" onClick={(e) => this.handleBarClick(e)} style={this.state.menuBarDisplay} />
+          <ExitIcon className="close-button" onClick={(e) => this.handleBarClick(e)} style={this.state.closeButtonDisplay} />
           <NavButton id="home" handleClick={this.handleClick} style={this.state.navbarDisplay}>
             <HomeIcon ref={this.homeRef} />
           </NavButton>

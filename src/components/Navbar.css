@@ -1,4 +1,4 @@
-.Menubar {
+.menubar {
   height: 2rem;
   align-self: flex-end;
   margin-top: 0.6rem;
@@ -9,7 +9,7 @@
   z-index: 2;
 }
 
-.CloseButton {
+.close-button {
   height: 2rem;
   align-self: flex-end;
   margin-top: 0.6rem;
@@ -20,7 +20,7 @@
   z-index: 2;
 }
 
-.Navbar {
+.navbar {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -30,11 +30,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .Menubar {
+  .menubar {
     display: none;
   }
 
-  .Navbar {
+  .navbar {
     display: flex;
     justify-content: center;
     width: 4rem;

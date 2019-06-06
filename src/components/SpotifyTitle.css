@@ -1,4 +1,4 @@
-.SpotifyTitle {
+.spotify-title {
   color: white;
   font-size: 20px;
   align-self: center;
@@ -8,7 +8,7 @@
 }
 
 @media only screen and (min-width:768px) {
-  .SpotifyTitle {
+  .spotify-title {
     grid-row: 5;
     grid-column: 3 / span 2;
   
@@ -19,7 +19,7 @@
 }
 
 @media only screen and (min-width: 1366px) {
-  .SpotifyTitle {
+  .spotify-title {
     grid-row: 1;
     grid-column: 2 / span 2;
     margin-top: auto;

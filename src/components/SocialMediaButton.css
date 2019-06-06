@@ -1,4 +1,4 @@
-.MediaButton {
+.media-button {
   grid-row: 5;
   display: flex;
   flex-direction: column;
@@ -7,14 +7,14 @@
   z-index: 1;
 }
 
-.Icon {
+.icon {
   height: 40px;
   border-radius: 50%;
   padding: 1rem;
   overflow: visible;
 }
 
-.Icon:hover {
+.icon:hover {
   cursor: pointer;
 	-webkit-transition: 200ms;
 	-webkit-transition-timing-function: ease-in-out;
@@ -22,57 +22,57 @@
 	transition-timing-function: ease-in-out;
 }
 
-.GreenIcon {
+.green-icon {
   fill: #2EFF90;
   background-color: #1E1D1D;
   border: 2px solid #2EFF90;
 }
 
-.GreenIcon:hover {
+.green-icon:hover {
   fill: #1E1D1D;
   border-color: #1E1D1D;
   background-color: #2EFF90;
 }
 
-.BlueIcon {
+.blue-icon {
   fill: #5EDCFF;
   background-color: #1E1D1D;
   border: 2px solid #5EDCFF;
 }
 
-.BlueIcon:hover {
+.blue-icon:hover {
   fill: #1E1D1D;
   border-color: #1E1D1D;
   background-color: #5EDCFF;
 }
 
-.YellowIcon {
+.yellow-icon {
   fill: #FFF056;
   background-color: #1E1D1D;
   border: 2px solid #FFF056;
 }
 
-.YellowIcon:hover {
+.yellow-icon:hover {
   fill: #1E1D1D;
   border-color: #1E1D1D;
   background-color: #FFF056;
 }
 
-.Top {
+.top {
   grid-column: 2;
   margin-right: 100%;
 }
 
-.Middle {
+.middle {
   grid-column: 3;
 }
 
-.Bottom {
+.bottom {
   grid-column: 4;
   margin-left: 100%;
 }
 
-.Label {
+.label {
   display: none;
   color: white;
   font-size: 35px;
@@ -80,47 +80,47 @@
 }
 
 @media only screen and (min-width:768px) {
-  .Top {
+  .top {
     grid-column: 2 / span 3;
     margin-right: 0;
   }
   
-  .Middle {
+  .middle {
     grid-column: 6 / span 3;
   }
   
-  .Bottom {
+  .bottom {
     grid-column: 10 / span 3;
     margin-left: 0;
   }
 
-  .Label {
+  .label {
     display: block;
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  .MediaButton {
+  .media-button {
     grid-column: 10 / span 2;
     flex-direction: row;
   }
 
-  .Label {
+  .label {
     margin: 0 auto 0 2rem;
   }
   
-  .Top {
+  .top {
     grid-row: 2;
     align-self: end;
     margin: 0;
   }
   
-  .Middle {
+  .middle {
     grid-row: 3;
     margin: 0;
   }
   
-  .Bottom {
+  .bottom {
     grid-row: 4;
     align-self: start;
     margin: 0;

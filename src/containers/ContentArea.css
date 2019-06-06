@@ -1,4 +1,4 @@
-.Content-Area {
+.content-area {
   width: 100%;
 
   overflow: auto;
@@ -7,12 +7,12 @@
   scrollbar-width: none;
 }
 
-.Content-Area::-webkit-scrollbar {
+.content-area::-webkit-scrollbar {
   display: none;
 }
 
 @media only screen and (min-width: 768px) {
-  .Content-Area {
+  .content-area {
     width: calc(100% - 4rem);
     height: 100%;
   
@@ -21,7 +21,7 @@
     scrollbar-width: none;
   }
 
-  .Content-Area::-webkit-scrollbar {
+  .content-area::-webkit-scrollbar {
     display: none;
   }
 }

@@ -6,9 +6,9 @@ function Footer(props) {
   const scheme = { color: colorScheme };
 
   return (
-    <p className="FooterName">
+    <p className="footer-name">
       Matthew Mulenga
-      <span className="FooterCopy" style={scheme}> &#169; 2019</span>
+      <span className="footer-copy" style={scheme}> &#169; 2019</span>
     </p>
   );
 }

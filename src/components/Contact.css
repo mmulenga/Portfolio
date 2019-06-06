@@ -1,4 +1,4 @@
-.Contact {
+.contact {
   display: flex;
   flex-direction: column;
 
@@ -9,7 +9,7 @@
   z-index: 1;
 }
 
-.SenderEmail {
+.sender-email {
   height: 7%;
   margin: 0rem 1rem 1rem 1rem;
   background-color: #1E1D1D;
@@ -22,7 +22,7 @@
   sans-serif;
 }
 
-.EmailBox {
+.email-box {
   height: 25rem;
   margin: 0rem 1rem 1rem 1rem;
   background-color: #1E1D1D;
@@ -36,13 +36,13 @@
   sans-serif;
 }
 
-.ContactText {
+.contact-text {
   font-size: 30px;
   color: white;
   margin: 0rem 1rem 1rem 1rem;
 }
 
-.SendButton {
+.send-button {
   align-self: center;
   color: #1E1D1D;
   background-color: #2EFF90;
@@ -52,40 +52,40 @@
   height: 4rem;
 }
 
-.SendButton:hover {
+.send-button:hover {
   cursor: pointer;
 }
 
 @media only screen and (min-width:768px) {
-  .Contact {
+  .contact {
     grid-column: 2/ span 11;
   }
   
-  .SenderEmail {
+  .sender-email {
     margin: 0 0 1rem 0;
   }
   
-  .EmailBox {
+  .email-box {
     height: 80%;
     margin: 0 0 1rem 0;
   }
   
-  .ContactText {
+  .contact-text {
     margin: 0;
   }
   
-  .SendButton {
+  .send-button {
     align-self: flex-end;
     margin-bottom: 3rem;
   }
 }
 
 @media only screen and (min-width: 1366px) {
-  .Contact {
+  .contact {
     grid-column: 2/ span 6;
   }
 
-  .SendButton {
+  .send-button {
     align-self: flex-end;
     margin-bottom: 0;
   }

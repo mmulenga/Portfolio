@@ -1,4 +1,4 @@
-.Landing {
+.landing {
   display: flex;
   flex-direction: column;
 
@@ -7,7 +7,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .Landing {
+  .landing {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -15,7 +15,7 @@
 }
 
 @media only screen and (min-width: 1366px) {
-  .Landing {
+  .landing {
     grid-template-rows: repeat(3, 1fr);
   }
 }

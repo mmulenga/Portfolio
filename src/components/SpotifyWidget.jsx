@@ -3,7 +3,7 @@ import './SpotifyWidget.css';
 
 function SpotifyWidget() {
   return (
-    <div className="SpotifyWidget">
+    <div className="spotify-widget">
       <iframe
         src="https://open.spotify.com/embed/user/12166954155/playlist/3Vxt0eJTGKcQFlxLJsBE8N"
         width="300"

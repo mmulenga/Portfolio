@@ -1,22 +1,22 @@
-.Section {
+.generic-section {
   display: flex;
   flex-direction: column;
 }
 
-.ContactSection {
+.contact-section {
   display: grid;
   grid-template-columns: repeat(5, 20%);
   grid-template-rows: repeat(6, 20%);
 }
 
 @media only screen and (min-width:768px) {
-  .Section {
+  .generic-section {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(3, 10rem);
   }
   
-  .ContactSection {
+  .contact-section {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -24,7 +24,7 @@
 }
 
 @media only screen and (min-width: 1366px) {
-  .Section {
+  .generic-section {
     grid-template-rows: repeat(4, 1fr);
   }
 }

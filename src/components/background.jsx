@@ -113,7 +113,7 @@ function Background(props) {
   };
 
   return (
-    <Particles canvasClassName="Particle-Canvas" params={particleParameters} />
+    <Particles canvasClassName="particle-canvas" params={particleParameters} />
   );
 }
 

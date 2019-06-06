@@ -5,11 +5,11 @@ function SocialMediaButton(props) {
   const { children, label, position, colorScheme, href } = props;
 
   return (
-    <div className={`MediaButton ${position} ${colorScheme}`}>
+    <div className={`media-button ${position} ${colorScheme}`}>
       <a href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
-      <p className="Label">
+      <p className="label">
         {label}
       </p>
     </div>

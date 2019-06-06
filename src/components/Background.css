@@ -1,4 +1,4 @@
-.Particle-Canvas {
+.particle-canvas {
   display: block;
   background: #0E0C0C;
   position: absolute;
@@ -6,7 +6,7 @@
 }
 
 @media only screen and (min-width:768px) {
-  .Particle-Canvas {
+  .particle-canvas {
     width: 100% !important;
   }
 }

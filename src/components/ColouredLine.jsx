@@ -6,7 +6,7 @@ function ColouredLine(props) {
   const scheme = { color: colorScheme, backgroundColor: colorScheme };
 
   return (
-    <hr className={`ColouredLine ${position}`} style={scheme} />
+    <hr className={`colored-line ${position}`} style={scheme} />
   );
 }
 

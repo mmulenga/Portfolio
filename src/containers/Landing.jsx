@@ -7,7 +7,7 @@ function Landing(props) {
   const { forwardedRef, colorScheme } = props;
 
   return (
-    <div ref={forwardedRef} className="Landing">
+    <div ref={forwardedRef} className="landing">
       <Portrait />
       <Name colorScheme={colorScheme} />
     </div>
