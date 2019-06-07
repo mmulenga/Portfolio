@@ -1,4 +1,5 @@
 .project-modal {
+  visibility: hidden;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -15,6 +16,7 @@
 .modal-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   background-color: #1E1D1D;
@@ -24,11 +26,9 @@
   position: absolute;
   height: 2rem;
   align-self: flex-end;
-  margin-top: 0.6rem;
-  margin-bottom: 0.6rem;
-  margin-right: 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   cursor: pointer;
-  fill: #5EDCFF;
+  fill: white;
 }
 
 .modal-image-box {
@@ -42,7 +42,7 @@
 }
 
 .modal-image {
-  width: 115%;
+  width: 140%;
   height: auto;
 }
 
@@ -71,6 +71,7 @@
   width: 8rem;
   height: 3rem;
   border: none;
+  margin-bottom: 3rem;
 }
 
 .modal-button-image {
@@ -83,4 +84,27 @@
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal-box {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .modal-box {
+    width: 50%;
+    height: 70%;
+  }
+
+  .modal-project-info {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 70%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }

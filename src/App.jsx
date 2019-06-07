@@ -125,7 +125,7 @@ class App extends React.Component {
             <Modal>
               <ProjectModal 
               projectName="By-Accident-Bot"
-              position="Left"
+              position="center"
               colorScheme={this.state.colorScheme}
               src={bab}
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
