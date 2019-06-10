@@ -1,5 +1,4 @@
 .project-modal {
-  visibility: hidden;
   position: fixed;
   display: flex;
   flex-direction: column;

@@ -22,6 +22,8 @@ import { ReactComponent as EmailIcon } from './images/envelope.svg';
 import { ReactComponent as GitIcon } from './images/github.svg';
 import { ReactComponent as LinkedIcon } from './images/linkedin.svg';
 
+import { byAccidentBot, volunteerize, preop } from './projects.js';
+
 import bab from './images/bab.jpg';
 
 class App extends React.Component {
@@ -31,7 +33,15 @@ class App extends React.Component {
       colorScheme: '#5EDCFF',
       buttonColorClass: 'blue-icon',
       targetSection: 'home',
-      isMobile: window.innerWidth < 768, 
+      isMobile: window.innerWidth < 768,
+      modalVisibility: {
+        display: 'none',
+      },
+      modalParameters: {
+        name: '',
+        src: '',
+        description: '',
+      },
     };
 
     this.appRef = React.createRef();
@@ -42,11 +52,17 @@ class App extends React.Component {
     this.contactSectionRef = React.createRef();
 
     this.dict = new Map();
+    this.projectMap = new Map();
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.resize);
     this.resize();
+    
+    this.projectMap.set('b', byAccidentBot);
+    this.projectMap.set('p', preop);
+    this.projectMap.set('v', volunteerize);
+
     // This will need to be refactored to some more elegant/efficient process.
     this.dict.set('home', this.landingSectionRef);
     this.dict.set('project', this.projectSectionRef);
@@ -105,10 +121,48 @@ class App extends React.Component {
     return (value >= min / 1.25 && value <= max / 1.25);
   }
 
+  toggleModal = () => {
+    if (this.state.modalVisibility.display === 'none') {
+      this.setState({
+        modalVisibility: {
+          display: 'flex',
+        },
+      });
+    } else {
+      this.setState({
+        modalVisibility: {
+          display: 'none',
+        },
+      });
+    }
+  }
+
+  handleProjectButtonClick = (key, e) => {
+    this.setState({
+      modalParameters: {
+        name: this.projectMap.get(key).name,
+        src: this.projectMap.get(key).src,
+        description: this.projectMap.get(key).description,
+        href: this.projectMap.get(key).href,
+      }
+    });
+
+    this.toggleModal();
+  }
+
   render() {
     return (
       <div id="app" ref={this.appRef} className="app">
         <Background colorScheme={this.state.colorScheme} />
+        <ProjectModal
+              visibility={this.state.modalVisibility} 
+              projectName={this.state.modalParameters.name}
+              src={this.state.modalParameters.src}
+              description={this.state.modalParameters.description}
+              href={this.state.modalParameters.href}
+              justify="center"
+              colorScheme={this.state.colorScheme}
+              toggleModal={this.toggleModal} />
         <Navbar 
           scrollToSection={this.scrollToSection}
           targetSection={this.state.targetSection}
@@ -117,35 +171,20 @@ class App extends React.Component {
           resize={this.resize} />
         <ContentArea ref={this.contentAreaRef} setTargetSection={this.setTargetSection}>
           <Landing ref={this.landingSectionRef} colorScheme={this.state.colorScheme} />
-          <Section ref={this.projectSectionRef} type="generic-section">
-            <SectionTitle name="Projects" position="left" colorScheme={this.state.colorScheme} />
-            <ProjectButton className="project-1" title="ByAccidentBot" src={bab} isMobile={this.state.isMobile} />
-            <ProjectButton className="project-2" title="Pre-Op App" src={bab} isMobile={this.state.isMobile} />
-            <ProjectButton className="project-3" title="Volunteerize" src={bab} isMobile={this.state.isMobile} />
-            <Modal>
-              <ProjectModal 
-              projectName="By-Accident-Bot"
-              position="center"
-              colorScheme={this.state.colorScheme}
-              src={bab}
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum." />
-            </Modal>
+          <Section ref={this.projectSectionRef} type="project-section">
+            <SectionTitle name="Projects" justify="left" colorScheme={this.state.colorScheme} />
+            <ProjectButton className="project-1" title="By-Accident-Bot" src={bab} isMobile={this.state.isMobile} handleClick={(e) => this.handleProjectButtonClick('b', e)}/>
+            <ProjectButton className="project-2" title="Pre-Op App" src={bab} isMobile={this.state.isMobile} handleClick={(e) => this.handleProjectButtonClick('p', e)} />
+            <ProjectButton className="project-3" title="Volunteerize" src={bab} isMobile={this.state.isMobile} handleClick={(e) => this.handleProjectButtonClick('v', e)} />
           </Section>
-          <Section ref={this.aboutSectionRef} type="generic-section">
-            <SectionTitle name="About Me" position="right" colorScheme={this.state.colorScheme} />
+          <Section ref={this.aboutSectionRef} type="about-section">
+            <SectionTitle name="About Me" justify="right" colorScheme={this.state.colorScheme} />
             <About />
             <SpotifyTitle />
             <SpotifyWidget />
           </Section>
           <Section ref={this.contactSectionRef} type="contact-section">
-            <SectionTitle name="Contact" position="left" colorScheme={this.state.colorScheme} />
+            <SectionTitle name="Contact" justify="left" colorScheme={this.state.colorScheme} />
             <Contact colorScheme={this.state.colorScheme} />
             <SocialMediaButton href="mailto:matt.mulengawoo@gmail.com" 
               alternative="Send me an email!" 

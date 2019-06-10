@@ -8,7 +8,7 @@ function Name(props) {
   return (
     <div className="name-container">
       <h1 className="name"> Matt Mulenga </h1>
-      <ColouredLine position="center" colorScheme={colorScheme} />
+      <ColouredLine justify="center" colorScheme={colorScheme} />
       <h2 className="title"> Software Developer | B. Sc. </h2>
     </div>
   );

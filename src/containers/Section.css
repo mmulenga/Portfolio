@@ -1,6 +1,13 @@
-.generic-section {
+.project-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-section {
@@ -10,7 +17,14 @@
 }
 
 @media only screen and (min-width:768px) {
-  .generic-section {
+  .project-section {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(2, 10rem);
+    grid-auto-rows: 10rem;
+  }
+
+  .about-section {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(3, 10rem);
@@ -24,7 +38,14 @@
 }
 
 @media only screen and (min-width: 1366px) {
-  .generic-section {
-    grid-template-rows: repeat(4, 1fr);
+  .project-section {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(3, 10rem);
+    grid-auto-rows: 10rem;
+  }
+
+  .about-section {
+    grid-template-rows: repeat(4, 10rem);
   }
 }
