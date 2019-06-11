@@ -1,14 +1,22 @@
-import React from 'react';
-import './Footer.css';
+// @flow
 
-function Footer(props) {
+import * as React from "react";
+import "./Footer.css";
+
+type Props = {
+  colorScheme: string
+};
+
+function Footer(props: Props) {
   const { colorScheme } = props;
-  const scheme = { color: colorScheme };
 
   return (
     <p className="footer-name">
       Matthew Mulenga
-      <span className="footer-copy" style={scheme}> &#169; 2019</span>
+      <span className="footer-copy" style={{ color :colorScheme }}>
+        {" "}
+        &#169; 2019
+      </span>
     </p>
   );
 }

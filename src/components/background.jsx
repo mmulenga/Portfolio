@@ -1,8 +1,14 @@
+// @flow
+
 import React from 'react';
 import Particles from 'react-particles-js';
 import './Background.css';
 
-function Background(props) {
+type Props = {
+  colorScheme: string,
+}
+
+function Background(props: Props) {
   const { colorScheme } = props;
 
   // Potential colours: #5edcff, #fff056

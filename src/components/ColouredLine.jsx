@@ -1,7 +1,14 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import './ColouredLine.css';
 
-function ColouredLine(props) {
+type Props = {
+  justify: string,
+  colorScheme: string,
+}
+
+function ColouredLine(props: Props) {
   const { justify, colorScheme } = props;
   const scheme = { color: colorScheme, backgroundColor: colorScheme };
 

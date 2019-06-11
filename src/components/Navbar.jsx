@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import NavButton from './NavButton';
 import './Navbar.css';
@@ -8,6 +10,14 @@ import { ReactComponent as HomeIcon } from '../images/home.svg';
 import { ReactComponent as ProjectIcon } from '../images/scatter.svg';
 import { ReactComponent as AboutIcon } from '../images/person.svg';
 import { ReactComponent as ContactIcon } from '../images/email.svg';
+
+type Props = {
+  scrollToSection: any,
+  targetSection: string,
+  colorScheme: string,
+  isMobile: boolean,
+  resize: any
+}
 
 class Navbar extends React.Component {
   constructor(props) {

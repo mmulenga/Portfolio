@@ -1,11 +1,11 @@
 .particle-canvas {
   display: block;
-  background: #0E0C0C;
+  background: #0e0c0c;
   position: absolute;
   z-index: -1;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   .particle-canvas {
     width: 100% !important;
   }

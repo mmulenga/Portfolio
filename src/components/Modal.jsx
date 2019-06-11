@@ -1,29 +1,31 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
+
+type Props = {
+  children?: React.Node,
+}
 
 const root = document.getElementById('root');
 
-class Modal extends React.Component {
-  constructor(props) {
-    super(props);
+function Modal(props: Props) {
+  const { children } = props;
+  const el: HTMLDivElement = document.createElement('div');
 
-    this.el = document.createElement('div');
-  }
+  useEffect(() => {
+    root.appendChild(el);
 
-  componentDidMount() {
-    root.appendChild(this.el);
-  }
+    return () => {
+       root.appendChild(el);
+    }
+  });
 
-  componentWillUnmount() {
-    root.removeChild(this.el);
-  }
-
-  render() {
-    return ReactDOM.createPortal(
-      this.props.children,
-      this.el,
-    );
-  }
+  return ReactDOM.createPortal(
+    children,
+    el,
+  );
 }
 
 export default Modal;

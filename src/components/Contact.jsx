@@ -1,7 +1,13 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import './Contact.css';
 
-function Contact(props) {
+type Props = {
+  colorScheme: string,
+}
+
+function Contact(props: Props) {
   const { colorScheme } = props;
   const scheme = { backgroundColor: colorScheme };
 
