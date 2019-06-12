@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 type Props = {
-  children?: React.Node,
-}
+  children: ?React.Node,
+};
 
 const root = document.getElementById('root');
 

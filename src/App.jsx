@@ -248,7 +248,6 @@ class App extends React.Component {
               justify="left"
               colorScheme={this.state.colorScheme}
             />
-            <Contact colorScheme={this.state.colorScheme} />
             <SocialMediaButton
               href="mailto:matt.mulengawoo@gmail.com"
               alternative="Send me an email!"

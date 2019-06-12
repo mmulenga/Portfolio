@@ -15,12 +15,20 @@ type Props = {
   scrollToSection: any,
   targetSection: string,
   colorScheme: string,
-  isMobile: boolean,
+  isMobile: Boolean,
   resize: any
-}
+};
 
-class Navbar extends React.Component {
-  constructor(props) {
+type State = {
+  selectedButton: string,
+  isMobile: Boolean,
+  navBarDisplay: Object,
+  menuBarDisplay: Object,
+  closeButtonDisplay: Object,
+};
+
+class Navbar extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = { 
