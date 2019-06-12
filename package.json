@@ -5,10 +5,10 @@
   "dependencies": {
     "eslint-config-airbnb": "^17.1.0",
     "particles.js": "^2.0.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-particles-js": "^2.6.0",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
