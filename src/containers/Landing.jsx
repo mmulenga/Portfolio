@@ -14,4 +14,6 @@ function Landing(props) {
   );
 }
 
-export default React.forwardRef((props, ref) => <Landing forwardedRef={ref} {...props} />);
+export default React.forwardRef((props, ref) => (
+  <Landing forwardedRef={ref} {...props} />
+));

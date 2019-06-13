@@ -9,10 +9,10 @@
 }
 
 .footer-copy {
-  color: #2EFF90;
+  color: #2eff90;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   .footer-name {
     grid-row: 6;
     grid-column: 1 / span 12;

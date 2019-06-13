@@ -2,13 +2,13 @@ import React from 'react';
 import ColouredLine from './ColouredLine';
 import './ProjectModal.css';
 
-import { ReactComponent as ExitIcon} from '../images/exit.svg';
+import { ReactComponent as ExitIcon } from '../images/exit.svg';
 import { ReactComponent as ExternalLinkIcon } from '../images/external-link.svg';
 
 class ProjectModal extends React.Component {
   toggleModal = () => {
     this.props.toggleModal();
-  }
+  };
 
   render() {
     return (
@@ -16,16 +16,21 @@ class ProjectModal extends React.Component {
         <div className="modal-box">
           <ExitIcon className="modal-exit" onClick={this.toggleModal} />
           <div className="modal-image-box">
-            <img className="modal-image" src={this.props.src} alt={this.props.alt} />
+            <img
+              className="modal-image"
+              src={this.props.src}
+              alt={this.props.alt}
+            />
           </div>
           <div className="modal-project-info">
             <h2 className="modal-project-name">
               {this.props.projectName}
-              <ColouredLine justify={this.props.justify} colorScheme={this.props.colorScheme} />
+              <ColouredLine
+                justify={this.props.justify}
+                colorScheme={this.props.colorScheme}
+              />
             </h2>
-            <p>
-              {this.props.description}
-            </p>
+            <p>{this.props.description}</p>
           </div>
           <a className="modal-button" href={this.props.href} type="button">
             <ExternalLinkIcon className="modal-button-image" />

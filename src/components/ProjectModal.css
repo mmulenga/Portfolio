@@ -9,7 +9,7 @@
   height: 100%;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 3 ;
+  z-index: 3;
 }
 
 .modal-box {
@@ -18,7 +18,7 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  background-color: #1E1D1D;
+  background-color: #1e1d1d;
 }
 
 .modal-exit {
@@ -37,7 +37,7 @@
   width: 100%;
   height: 35%;
   overflow: hidden;
-  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.75);
 }
 
 .modal-image {
@@ -63,10 +63,10 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  color: #1E1D1D;
+  color: #1e1d1d;
   text-decoration: none;
   font-size: 20px;
-  background-color: #5EDCFF;
+  background-color: #5edcff;
   width: 8rem;
   height: 3rem;
   border: none;

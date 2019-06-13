@@ -1,46 +1,46 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
-import Navbar from "./components/Navbar";
-import Background from "./components/Background";
-import SectionTitle from "./components/SectionTitle";
-import ProjectButton from "./components/ProjectButton";
-import About from "./components/About";
-import SpotifyTitle from "./components/SpotifyTitle";
-import SpotifyWidget from "./components/SpotifyWidget";
-import Contact from "./components/Contact";
-import SocialMediaButton from "./components/SocialMediaButton";
-import Footer from "./components/Footer";
-import ProjectModal from "./components/ProjectModal";
-import Modal from "./components/Modal";
+import Navbar from './components/Navbar';
+import Background from './components/Background';
+import SectionTitle from './components/SectionTitle';
+import ProjectButton from './components/ProjectButton';
+import About from './components/About';
+import SpotifyTitle from './components/SpotifyTitle';
+import SpotifyWidget from './components/SpotifyWidget';
+import Contact from './components/Contact';
+import SocialMediaButton from './components/SocialMediaButton';
+import Footer from './components/Footer';
+import ProjectModal from './components/ProjectModal';
+import Modal from './components/Modal';
 
-import ContentArea from "./containers/ContentArea";
-import Landing from "./containers/Landing";
-import Section from "./containers/Section";
+import ContentArea from './containers/ContentArea';
+import Landing from './containers/Landing';
+import Section from './containers/Section';
 
-import { ReactComponent as EmailIcon } from "./images/envelope.svg";
-import { ReactComponent as GitIcon } from "./images/github.svg";
-import { ReactComponent as LinkedIcon } from "./images/linkedin.svg";
+import { ReactComponent as EmailIcon } from './images/envelope.svg';
+import { ReactComponent as GitIcon } from './images/github.svg';
+import { ReactComponent as LinkedIcon } from './images/linkedin.svg';
 
-import { byAccidentBot, volunteerize, preop } from "./projects.js";
+import { byAccidentBot, volunteerize, preop } from './projects.js';
 
-import bab from "./images/bab.jpg";
+import bab from './images/bab.jpg';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      colorScheme: "#5EDCFF",
-      buttonColorClass: "blue-icon",
-      targetSection: "home",
+      colorScheme: '#5EDCFF',
+      buttonColorClass: 'blue-icon',
+      targetSection: 'home',
       isMobile: window.innerWidth < 768,
       modalVisibility: {
-        display: "none"
+        display: 'none'
       },
       modalParameters: {
-        name: "",
-        src: "",
-        description: ""
+        name: '',
+        src: '',
+        description: '',
       }
     };
 
@@ -56,22 +56,22 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.resize);
+    window.addEventListener('resize', this.resize);
     this.resize();
 
-    this.projectMap.set("b", byAccidentBot);
-    this.projectMap.set("p", preop);
-    this.projectMap.set("v", volunteerize);
+    this.projectMap.set('b', byAccidentBot);
+    this.projectMap.set('p', preop);
+    this.projectMap.set('v', volunteerize);
 
     // This will need to be refactored to some more elegant/efficient process.
-    this.dict.set("home", this.landingSectionRef);
-    this.dict.set("project", this.projectSectionRef);
-    this.dict.set("about", this.aboutSectionRef);
-    this.dict.set("contact", this.contactSectionRef);
+    this.dict.set('home', this.landingSectionRef);
+    this.dict.set('project', this.projectSectionRef);
+    this.dict.set('about', this.aboutSectionRef);
+    this.dict.set('contact', this.contactSectionRef);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resize);
+    window.removeEventListener('resize', this.resize);
   }
 
   resize = () => {
@@ -87,7 +87,7 @@ class App extends React.Component {
   scrollToSection = section => {
     this.contentAreaRef.current.scrollTo({
       top: this.dict.get(section).current.offsetTop,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
 
@@ -108,7 +108,7 @@ class App extends React.Component {
       this.inRange(position, 0, this.projectSectionRef.current.offsetTop) &&
       this.state.targetSection !== "home"
     ) {
-      this.setState({ targetSection: "home" });
+      this.setState({ targetSection: 'home' });
     } else if (
       this.inRange(
         position,
@@ -117,7 +117,7 @@ class App extends React.Component {
       ) &&
       this.state.targetSection !== "project"
     ) {
-      this.setState({ targetSection: "project" });
+      this.setState({ targetSection: 'project' });
     } else if (
       this.inRange(
         position,
@@ -126,7 +126,7 @@ class App extends React.Component {
       ) &&
       this.state.targetSection !== "about"
     ) {
-      this.setState({ targetSection: "about" });
+      this.setState({ targetSection: 'about' });
     } else if (
       this.inRange(
         position,
@@ -136,7 +136,7 @@ class App extends React.Component {
       ) &&
       this.state.targetSection !== "contact"
     ) {
-      this.setState({ targetSection: "contact" });
+      this.setState({ targetSection: 'contact' });
     }
   };
 
@@ -148,13 +148,13 @@ class App extends React.Component {
     if (this.state.modalVisibility.display === "none") {
       this.setState({
         modalVisibility: {
-          display: "flex"
+          display: 'flex'
         }
       });
     } else {
       this.setState({
         modalVisibility: {
-          display: "none"
+          display: 'none'
         }
       });
     }
@@ -248,6 +248,7 @@ class App extends React.Component {
               justify="left"
               colorScheme={this.state.colorScheme}
             />
+            <Contact colorScheme={this.state.colorScheme} />
             <SocialMediaButton
               href="mailto:matt.mulengawoo@gmail.com"
               alternative="Send me an email!"

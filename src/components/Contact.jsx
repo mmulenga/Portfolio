@@ -4,8 +4,8 @@ import * as React from 'react';
 import './Contact.css';
 
 type Props = {
-  colorScheme: string,
-}
+  colorScheme: string
+};
 
 function Contact(props: Props) {
   const { colorScheme } = props;
@@ -17,7 +17,12 @@ function Contact(props: Props) {
       <input className="sender-email" type="text" />
       <p className="contact-text">Message</p>
       <textarea className="email-box" />
-      <input className="send-button" style={scheme} type="submit" value="Send" />
+      <input
+        className="send-button"
+        style={scheme}
+        type="submit"
+        value="Send"
+      />
     </form>
   );
 }

@@ -1,5 +1,5 @@
 .media-button {
-  grid-row: 4;
+  grid-row: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,46 +16,46 @@
 
 .icon:hover {
   cursor: pointer;
-	-webkit-transition: 200ms;
-	-webkit-transition-timing-function: ease-in-out;
-	transition: 200ms;
-	transition-timing-function: ease-in-out;
+  -webkit-transition: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .green-icon {
-  fill: #2EFF90;
-  background-color: #1E1D1D;
-  border: 2px solid #2EFF90;
+  fill: #2eff90;
+  background-color: #1e1d1d;
+  border: 2px solid #2eff90;
 }
 
 .green-icon:hover {
-  fill: #1E1D1D;
-  border-color: #1E1D1D;
-  background-color: #2EFF90;
+  fill: #1e1d1d;
+  border-color: #1e1d1d;
+  background-color: #2eff90;
 }
 
 .blue-icon {
-  fill: #5EDCFF;
-  background-color: #1E1D1D;
-  border: 2px solid #5EDCFF;
+  fill: #5edcff;
+  background-color: #1e1d1d;
+  border: 2px solid #5edcff;
 }
 
 .blue-icon:hover {
-  fill: #1E1D1D;
-  border-color: #1E1D1D;
-  background-color: #5EDCFF;
+  fill: #1e1d1d;
+  border-color: #1e1d1d;
+  background-color: #5edcff;
 }
 
 .yellow-icon {
-  fill: #FFF056;
-  background-color: #1E1D1D;
-  border: 2px solid #FFF056;
+  fill: #fff056;
+  background-color: #1e1d1d;
+  border: 2px solid #fff056;
 }
 
 .yellow-icon:hover {
-  fill: #1E1D1D;
-  border-color: #1E1D1D;
-  background-color: #FFF056;
+  fill: #1e1d1d;
+  border-color: #1e1d1d;
+  background-color: #fff056;
 }
 
 .top {
@@ -79,20 +79,16 @@
   margin: 0;
 }
 
-@media only screen and (min-width:768px) {
-  .media-button {
-    grid-row: 2;
-  }
-
+@media only screen and (min-width: 768px) {
   .top {
     grid-column: 2 / span 3;
     margin-right: 0;
   }
-  
+
   .middle {
     grid-column: 6 / span 3;
   }
-  
+
   .bottom {
     grid-column: 10 / span 3;
     margin-left: 0;
@@ -112,18 +108,18 @@
   .label {
     margin: 0 auto 0 2rem;
   }
-  
+
   .top {
     grid-row: 2;
     align-self: end;
     margin: 0;
   }
-  
+
   .middle {
     grid-row: 3;
     margin: 0;
   }
-  
+
   .bottom {
     grid-row: 4;
     align-self: start;

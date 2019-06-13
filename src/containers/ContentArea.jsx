@@ -15,4 +15,6 @@ function ContentArea(props) {
   );
 }
 
-export default React.forwardRef((props, ref) => <ContentArea forwardedRef={ref} {...props} />);
+export default React.forwardRef((props, ref) => (
+  <ContentArea forwardedRef={ref} {...props} />
+));

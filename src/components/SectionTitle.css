@@ -7,12 +7,12 @@
   justify-self: center;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   .left {
     grid-column: 2 / span 2;
     justify-self: start;
   }
-  
+
   .right {
     grid-row: 1;
     grid-column: 9 / span 4;
@@ -26,7 +26,7 @@
     grid-column: 2 / span 2;
     justify-self: start;
   }
-  
+
   .right {
     display: flex;
     flex-direction: column;

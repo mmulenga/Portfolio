@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 type Props = {
-  children: ?React.Node,
+  children: ?React.Node
 };
 
 const root = document.getElementById('root');
@@ -18,14 +18,11 @@ function Modal(props: Props) {
     root.appendChild(el);
 
     return () => {
-       root.appendChild(el);
-    }
+      root.appendChild(el);
+    };
   });
 
-  return ReactDOM.createPortal(
-    children,
-    el,
-  );
+  return ReactDOM.createPortal(children, el);
 }
 
 export default Modal;

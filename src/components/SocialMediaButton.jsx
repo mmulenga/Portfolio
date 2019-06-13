@@ -9,9 +9,7 @@ function SocialMediaButton(props) {
       <a href={href} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
-      <p className="label">
-        {label}
-      </p>
+      <p className="label">{label}</p>
     </div>
   );
 }

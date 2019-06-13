@@ -15,7 +15,7 @@
   .content-area {
     width: calc(100% - 4rem);
     height: 100%;
-  
+
     overflow: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;

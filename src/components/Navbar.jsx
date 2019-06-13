@@ -4,8 +4,8 @@ import React from 'react';
 import NavButton from './NavButton';
 import './Navbar.css';
 
-import { ReactComponent as BarIcon} from '../images/bar.svg';
-import { ReactComponent as ExitIcon} from '../images/exit.svg';
+import { ReactComponent as BarIcon } from '../images/bar.svg';
+import { ReactComponent as ExitIcon } from '../images/exit.svg';
 import { ReactComponent as HomeIcon } from '../images/home.svg';
 import { ReactComponent as ProjectIcon } from '../images/scatter.svg';
 import { ReactComponent as AboutIcon } from '../images/person.svg';
@@ -24,25 +24,25 @@ type State = {
   isMobile: Boolean,
   navBarDisplay: Object,
   menuBarDisplay: Object,
-  closeButtonDisplay: Object,
+  closeButtonDisplay: Object
 };
 
 class Navbar extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = { 
+    this.state = {
       selectedButton: 'home',
       isMobile: '',
       navbarDisplay: {
-        display: '',
+        display: ''
       },
       menuBarDisplay: {
         display: 'block',
-        color: this.props.colorScheme, 
+        color: this.props.colorScheme
       },
       closeButtonDisplay: {
-        display: 'none',
+        display: 'none'
       }
     };
 
@@ -62,7 +62,7 @@ class Navbar extends React.Component<Props, State> {
     this.dict.set('project', this.projectRef);
     this.dict.set('about', this.aboutRef);
     this.dict.set('contact', this.contactRef);
-    
+
     this.homeRef.current.style.fill = this.props.colorScheme;
   }
 
@@ -84,15 +84,14 @@ class Navbar extends React.Component<Props, State> {
           },
           menuBarDisplay: {
             display: 'block',
-            color: this.props.colorScheme,
+            color: this.props.colorScheme
           },
           closeButtonDisplay: {
-            display: 'none',
+            display: 'none'
           }
         });
-      }
-      else {
-        this.setState({ 
+      } else {
+        this.setState({
           isMobile: this.props.isMobile,
           navbarDisplay: {
             display: 'block'
@@ -101,47 +100,46 @@ class Navbar extends React.Component<Props, State> {
             display: 'none'
           },
           closeButtonDisplay: {
-            display: 'none',
-          } 
+            display: 'none'
+          }
         });
       }
     }
-  }
-
+  };
 
   // Takes the id of the target and it's color
-  setSelectedButton = (target) => {
+  setSelectedButton = target => {
     // Reset the color of the old button.
-    this.dict.get(this.state.selectedButton).current.style.fill = "black";
+    this.dict.get(this.state.selectedButton).current.style.fill = 'black';
     // Update the color of the selected button.
     this.dict.get(target).current.style.fill = this.props.colorScheme;
 
-    this.setState({ selectedButton: target});
-  }
+    this.setState({ selectedButton: target });
+  };
 
-  handleClick = (target) => {
+  handleClick = target => {
     this.setSelectedButton(target.id);
     this.props.scrollToSection(target.id);
-  }
+  };
 
-  handleBarClick = (e) => {
+  handleBarClick = e => {
     e.stopPropagation();
 
-    if (this.state.navbarDisplay.display === 'block') {
-      this.setState({ 
+    if (this.state.navbarDisplay.display === "block") {
+      this.setState({
         navbarDisplay: {
           display: 'none'
         },
         menuBarDisplay: {
           display: 'block',
-          color: this.props.colorScheme,
+          color: this.props.colorScheme
         },
         closeButtonDisplay: {
           display: 'none'
-        } 
+        }
       });
     } else {
-      this.setState({ 
+      this.setState({
         navbarDisplay: {
           display: 'block'
         },
@@ -150,28 +148,52 @@ class Navbar extends React.Component<Props, State> {
         },
         closeButtonDisplay: {
           display: 'block',
-          fill: this.props.colorScheme,
-        } 
+          fill: this.props.colorScheme
+        }
       });
     }
-  }
+  };
 
   render() {
     return (
       <React.Fragment>
         <div className="navbar">
-          <BarIcon className="menubar" onClick={(e) => this.handleBarClick(e)} style={this.state.menuBarDisplay} />
-          <ExitIcon className="close-button" onClick={(e) => this.handleBarClick(e)} style={this.state.closeButtonDisplay} />
-          <NavButton id="home" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+          <BarIcon
+            className="menubar"
+            onClick={e => this.handleBarClick(e)}
+            style={this.state.menuBarDisplay}
+          />
+          <ExitIcon
+            className="close-button"
+            onClick={e => this.handleBarClick(e)}
+            style={this.state.closeButtonDisplay}
+          />
+          <NavButton
+            id="home"
+            handleClick={this.handleClick}
+            style={this.state.navbarDisplay}
+          >
             <HomeIcon ref={this.homeRef} />
           </NavButton>
-          <NavButton id="project" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+          <NavButton
+            id="project"
+            handleClick={this.handleClick}
+            style={this.state.navbarDisplay}
+          >
             <ProjectIcon ref={this.projectRef} />
           </NavButton>
-          <NavButton id="about" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+          <NavButton
+            id="about"
+            handleClick={this.handleClick}
+            style={this.state.navbarDisplay}
+          >
             <AboutIcon ref={this.aboutRef} />
           </NavButton>
-          <NavButton id="contact" handleClick={this.handleClick} style={this.state.navbarDisplay}>
+          <NavButton
+            id="contact"
+            handleClick={this.handleClick}
+            style={this.state.navbarDisplay}
+          >
             <ContactIcon ref={this.contactRef} />
           </NavButton>
         </div>

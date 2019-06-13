@@ -11,4 +11,6 @@ function Section(props) {
   );
 }
 
-export default React.forwardRef((props, ref) => <Section forwardedRef={ref} {...props} />);
+export default React.forwardRef((props, ref) => (
+  <Section forwardedRef={ref} {...props} />
+));

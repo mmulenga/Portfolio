@@ -5,8 +5,8 @@ import Particles from 'react-particles-js';
 import './Background.css';
 
 type Props = {
-  colorScheme: string,
-}
+  colorScheme: string
+};
 
 function Background(props: Props) {
   const { colorScheme } = props;
@@ -18,21 +18,21 @@ function Background(props: Props) {
         value: 75,
         density: {
           enable: true,
-          value_area: 800,
-        },
+          value_area: 800
+        }
       },
       color: {
-        value: colorScheme,
+        value: colorScheme
       },
       shape: {
         type: 'circle',
         stroke: {
           width: 0,
-          color: '#000000',
+          color: '#000000'
         },
         polygon: {
-          nb_sides: 5,
-        },
+          nb_sides: 5
+        }
       },
       opacity: {
         value: 0.5,
@@ -41,8 +41,8 @@ function Background(props: Props) {
           enable: false,
           speed: 1,
           opacity_min: 0.1,
-          sync: false,
-        },
+          sync: false
+        }
       },
       size: {
         value: 3,
@@ -51,15 +51,15 @@ function Background(props: Props) {
           enable: false,
           speed: 40,
           size_min: 0.1,
-          sync: false,
-        },
+          sync: false
+        }
       },
       line_linked: {
         enable: true,
         distance: 150,
         color: colorScheme,
         opacity: 0.4,
-        width: 1,
+        width: 1
       },
       move: {
         enable: true,
@@ -72,50 +72,50 @@ function Background(props: Props) {
         attract: {
           enable: false,
           rotateX: 600,
-          rotateY: 1200,
-        },
-      },
+          rotateY: 1200
+        }
+      }
     },
     interactivity: {
       detect_on: 'window',
       events: {
         onhover: {
           enable: true,
-          mode: 'grab',
+          mode: 'grab'
         },
         onclick: {
           enable: true,
-          mode: 'push',
+          mode: 'push'
         },
-        resize: true,
+        resize: true
       },
       modes: {
         grab: {
           distance: 125,
           line_linked: {
-            opacity: 1,
-          },
+            opacity: 1
+          }
         },
         bubble: {
           distance: 100,
           size: 5,
           duration: 2,
           opacity: 8,
-          speed: 3,
+          speed: 3
         },
         repulse: {
           distance: 200,
-          duration: 0.4,
+          duration: 0.4
         },
         push: {
-          particles_nb: 3,
+          particles_nb: 3
         },
         remove: {
-          particles_nb: 2,
-        },
-      },
+          particles_nb: 2
+        }
+      }
     },
-    retina_detect: true,
+    retina_detect: true
   };
 
   return (

@@ -1,8 +1,14 @@
+// @flow
+
 import React from 'react';
 import ColouredLine from './ColouredLine';
 import './Name.css';
 
-function Name(props) {
+type Props = {
+  colorScheme: string,
+};
+
+function Name(props: Props) {
   const { colorScheme } = props;
 
   return (
