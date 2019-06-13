@@ -14,7 +14,7 @@ function Name(props: Props) {
   return (
     <div className="name-container">
       <h1 className="name"> Matt Mulenga </h1>
-      <ColouredLine justify="center" colorScheme={colorScheme} />
+      <ColouredLine justify="name-align" colorScheme={colorScheme} />
       <h2 className="title"> Software Developer | B. Sc. </h2>
     </div>
   );
