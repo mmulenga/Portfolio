@@ -17,24 +17,26 @@ function Contact(props: Props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios({
-      method: 'POST',
-      url: 'http://localhost:9000/',
-      data: {
-        email: senderEmail,
-        message: emailBody,
-      }
-    }).then((response) => {
-      if (response.data.msg === 'success') {
-        alert('Message sent.');
-      } else {
-        alert('Message failed to send.');
-      }
-    })
+    if (senderEmail !== '' && emailBody !== '') {
+      axios({
+        method: 'POST',
+        url: 'http://localhost:9000/',
+        data: {
+          email: senderEmail,
+          message: emailBody,
+        }
+      }).then((response) => {
+        if (response.data.msg === 'success') {
+          alert('Message sent.');
+        } else {
+          alert('Message failed to send.');
+        }
+      });
+    }
   }
 
   return (
-    <form className="contact" onSubmit={(e) => handleSubmit(e)} method="POST">
+    <form className="contact" onSubmit={(e) => handleSubmit(e)}>
       <p className="contact-text">Your email address</p>
       <input
         className="sender-email"
