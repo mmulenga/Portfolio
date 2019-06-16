@@ -26,7 +26,7 @@ router.post('/', (req, res, next) => {
 
   var mail = {
     from: email,
-    to: 'matt.mulengawoo@gmail.com',
+    to: credentials.USER,
     subject: 'Portfolio Site Contact',
     text: message
   };
