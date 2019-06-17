@@ -1,60 +1,38 @@
+// @flow
 import React from 'react';
 import './ProjectButton.css';
 
-class ProjectButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      toggleInfoDisplay: {
-        visibility: 'hidden'
-      }
-    };
-  }
+type Props = {
+  className: string,
+  key: string,
+}
 
-  handleHover = () => {
-    if (this.state.toggleInfoDisplay.visibility === "hidden") {
-      this.setState({
-        toggleInfoDisplay: {
-          visibility: 'visible'
-        }
-      });
-    } else {
-      this.setState({
-        toggleInfoDisplay: {
-          visibility: 'hidden'
-        }
-      });
-    }
-  };
+function ProjectButton(props: Props) {
+  const { className, key, title, src, handleClick } = props;
 
-  handleClick = (key, e) => {
+  function handleClickEvent(key, e) {
     e.stopPropagation();
-    this.props.handleClick(key, e);
+    handleClick(key, e);
   };
 
-  render() {
-    return (
-      <div
-        className={`${this.props.className} project-button`}
-        onClick={e => this.handleClick(this.props.key, e)}
-        onMouseEnter={this.handleHover}
-        onMouseLeave={this.handleHover}
+  return (
+    <div
+      className={`${className} project-button`}
+      onClick={e => handleClickEvent(key, e)}
+    >
+      <button
+        type="button"
+        className="project-name"
       >
-        <button
-          type="button"
-          className="project-name"
-          style={this.state.toggleInfoDisplay}
-        >
-          <p> {this.props.title} </p>
-        </button>
-        <img
-          className="project-image"
-          src={this.props.src}
-          alt="It's me Matt!"
-        />
-      </div>
-    );
-  }
+        <p> {title} </p>
+      </button>
+      <img
+        className="project-image"
+        src={src}
+        alt="It's me Matt!"
+      />
+    </div>
+  );
 }
 
 export default ProjectButton;
