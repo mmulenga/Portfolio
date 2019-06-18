@@ -1,39 +1,32 @@
-import byAccidentBotImage from './images/bab.jpg';
+import byAccidentBotImage from './images/reddit-hd.jpg';
+import preopImage from './images/preoper-hd.jpg';
+import volunteerImage from './images/volunteer-hd.jpg';
 
 export const byAccidentBot = {
   name: 'By-Accident-Bot',
   src: byAccidentBotImage,
-  description: `By-Accident-Bot is a reddit bot that corrects the usage of the
+  description: `By-Accident-Bot is a reddit bot that "corrects" the usage of the
     phrase "on accident". Using Python, PRAW, and Firebase, it continually searches
-    for instances of the phrase and replies to them. Is it obnoxious? Yeah totally,
-    but it was fun as hell to make.`,
+    for instances of the phrase and replies to them. This project also helped me learn the
+    basics of testing and continuous integration.`,
   href: 'https://www.reddit.com/user/by-accident-bot',
+};
+
+export const preop = {
+  name: 'Pre-Op Testing App',
+  src: preopImage,
+  description: `Built with VueJS, Bootstrap, and Python. This was an application
+  designed and implemented for the Division of Oncology at the Univeristy of Saskatchewan.
+  It allows doctors to see which tests they need to run for patients with certain co-morbidities,
+  before surgery.`,
+  href: 'http://preop-testing.usask.ca/',
 };
 
 export const volunteerize = {
   name: 'Volunteerize',
-  src: byAccidentBotImage,
-  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum.`,
+  src: volunteerImage,
+  description: `Volunteerize was a university group project aimed at delivering a
+  volunteer scheduling and recruiting solution for volunteering organizations around
+  Saskatoon. It was built using Java, JavaFX, and PostgreSQL.`,
   href: 'https://github.com/mmulenga/Volunteerize',
-};
-
-export const preop = {
-  name: 'Pre-Op App',
-  src: byAccidentBotImage,
-  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate
-    velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum.`,
-  href: 'http://preop-testing.usask.ca/',
 };

@@ -1,7 +1,7 @@
 .particle-canvas {
   display: block;
   background: #0e0c0c;
-  position: absolute;
+  position: fixed;
   z-index: -1;
 }
 

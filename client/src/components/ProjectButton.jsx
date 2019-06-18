@@ -5,6 +5,9 @@ import './ProjectButton.css';
 type Props = {
   className: string,
   key: string,
+  title: string,
+  src: string,
+  handleClick: any,
 }
 
 function ProjectButton(props: Props) {

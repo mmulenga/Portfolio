@@ -24,7 +24,9 @@ import { ReactComponent as LinkedIcon } from './images/linkedin.svg';
 
 import { byAccidentBot, volunteerize, preop } from './projects.js';
 
-import bab from './images/bab.jpg';
+import bab from './images/reddit.jpg';
+import volunteer from './images/volunteer.jpg';
+import preoper from './images/preoper.jpg';
 
 class App extends React.Component {
   constructor(props) {
@@ -208,14 +210,14 @@ class App extends React.Component {
             <ProjectButton
               className="project-2"
               title="Pre-Op App"
-              src={bab}
+              src={preoper}
               isMobile={this.state.isMobile}
               handleClick={e => this.handleProjectButtonClick("p", e)}
             />
             <ProjectButton
               className="project-3"
               title="Volunteerize"
-              src={bab}
+              src={volunteer}
               isMobile={this.state.isMobile}
               handleClick={e => this.handleProjectButtonClick("v", e)}
             />

@@ -18,7 +18,7 @@ function Modal(props: Props) {
     root.appendChild(el);
 
     return () => {
-      root.appendChild(el);
+      root.removeChild(el);
     };
   });
 

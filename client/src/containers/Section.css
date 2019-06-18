@@ -20,7 +20,7 @@
   .project-section {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(2, 10rem);
+    grid-template-rows: repeat(3, 5rem);
     grid-auto-rows: 10rem;
   }
 
@@ -41,7 +41,7 @@
   .project-section {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(3, 10rem);
+    grid-template-rows: repeat(4, 10rem);
     grid-auto-rows: 10rem;
   }
 

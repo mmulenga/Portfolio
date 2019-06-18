@@ -3,8 +3,10 @@
   grid-row: 3 / span 1;
   width: fit-content;
   color: white;
+  align-self: center;
   justify-self: center;
   text-align: center;
+  margin-top: 4rem;
   margin-bottom: 5rem;
   z-index: 1;
 }
