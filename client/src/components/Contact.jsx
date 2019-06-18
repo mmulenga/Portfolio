@@ -37,7 +37,7 @@ function Contact(props: Props) {
 
   return (
     <form className="contact" onSubmit={(e) => handleSubmit(e)}>
-      <p className="contact-text">Your email address</p>
+      <p className="contact-text">Email Address</p>
       <input
         className="sender-email"
         type="text"

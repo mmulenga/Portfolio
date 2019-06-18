@@ -6,13 +6,13 @@ import './About.css';
 function About() {
   return (
     <div className="about-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+      Inspired by all things tech, I grew up to develop a passion for programming.
+      As an aspiring full-stack software engineer I&apos;ve taken an interest in learning
+      a wide variety of subjects, ranging from front-end technologies, like React, to
+      back-end technologies like PostgreSQL.
+      When I&apos;m not programming you can find me playing video-games, planning my next
+      trip around the world or just flat out enjoying the outdoors. If I sound like the
+      kind of person you&apos;re looking for to join your team, give me a shout below!
     </div>
   );
 }
