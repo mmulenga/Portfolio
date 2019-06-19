@@ -11,17 +11,23 @@ type Props = {
 
 function Contact(props: Props) {
   const { colorScheme } = props;
+  const [senderName, setSenderName] = useState('');
   const [senderEmail, setSenderEmail] = useState('');
   const [emailBody, setEmailBody] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (senderEmail !== '' && emailBody !== '') {
+    if (senderEmail === '') {
+      alert('Please enter your email address.');
+    } else if (emailBody === '') {
+      alert('Please enter a message.');
+    } else {
       axios({
         method: 'POST',
         url: 'https://mattmulenga.com/mail',
         data: {
+          name: senderName,
           email: senderEmail,
           message: emailBody,
         }
@@ -36,7 +42,14 @@ function Contact(props: Props) {
   }
 
   return (
-    <form className="contact" onSubmit={(e) => handleSubmit(e)}>
+    <form className="contact" id="contact-form" onSubmit={(e) => handleSubmit(e)}>
+      <p className="contact-text">Name</p>
+      <input
+        className="sender-name"
+        type="text"
+        value={senderName}
+        onChange={(e) => setSenderName(e.target.value)}
+      />
       <p className="contact-text">Email Address</p>
       <input
         className="sender-email"

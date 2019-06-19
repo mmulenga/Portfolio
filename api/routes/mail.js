@@ -21,14 +21,16 @@ transporter.verify((error, success) => {
 })
 
 router.post('/mail', (req, res, next) => {
+  var name = req.body.name;
   var email = req.body.email;
   var message = req.body.message;
+  var content = `Name: ${name} \n Email: ${email} \n Message: ${message}`
 
   var mail = {
     from: email,
     to: credentials.USER,
     subject: 'Portfolio Site Contact',
-    text: message
+    text: content,
   };
 
   transporter.sendMail(mail, (err, data) => {
