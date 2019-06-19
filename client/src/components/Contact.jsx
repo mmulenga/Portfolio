@@ -20,7 +20,7 @@ function Contact(props: Props) {
     if (senderEmail !== '' && emailBody !== '') {
       axios({
         method: 'POST',
-        url: 'http://localhost:9000/',
+        url: 'http://localhost:9000/api',
         data: {
           email: senderEmail,
           message: emailBody,
@@ -29,7 +29,7 @@ function Contact(props: Props) {
         if (response.data.msg === 'success') {
           alert('Message sent.');
         } else {
-          alert('Message failed to send.');
+          alert('Message failed to send. Please try again later.');
         }
       });
     }
