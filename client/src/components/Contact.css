@@ -52,12 +52,6 @@
     sans-serif;
 }
 
-.contact-text {
-  font-size: 30px;
-  color: white;
-  margin: 0rem 1rem 1rem 1rem;
-}
-
 .send-button {
   align-self: center;
   color: #1e1d1d;
@@ -65,7 +59,7 @@
   font-size: 20px;
   border: none;
   width: 8rem;
-  height: 4rem;
+  min-height: 3rem;
   cursor: pointer;
 }
 
