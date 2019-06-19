@@ -20,7 +20,7 @@ transporter.verify((error, success) => {
   }
 })
 
-router.post('/', (req, res, next) => {
+router.post('/mail', (req, res, next) => {
   var email = req.body.email;
   var message = req.body.message;
 

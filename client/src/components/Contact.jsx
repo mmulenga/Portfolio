@@ -20,7 +20,7 @@ function Contact(props: Props) {
     if (senderEmail !== '' && emailBody !== '') {
       axios({
         method: 'POST',
-        url: 'http://localhost:9000/api',
+        url: 'https://mattmulenga.com/mail',
         data: {
           email: senderEmail,
           message: emailBody,
