@@ -1,27 +1,37 @@
+// @flow
 import React from 'react';
 import './NavButton.css';
 
-class NavButton extends React.Component {
-  handleClickEvent = (target, e) => {
+type Props = {
+  id: string,
+  aria: string,
+  style: any,
+  children: any,
+  handleClick: any,
+}
+
+function NavButton(props: Props) {
+  const { id, aria, style, children, handleClick } = props;
+
+  function handleClickEvent(target, e) {
     e.stopPropagation();
-    this.props.handleClick(target);
+    handleClick(target);
   };
 
-  render() {
-    return (
-      // preventDefault() to get rid of focus when clicking on buttons, maintains accessibility when using keyboard.
-      <button
-        id={this.props.id}
-        onClick={e => this.handleClickEvent(e.target, e)}
-        onMouseDown={e => e.preventDefault()}
-        className="nav-button"
-        type="button"
-        style={this.props.style}
-      >
-        {this.props.children}
-      </button>
-    );
-  }
+  return (
+    // preventDefault() to get rid of focus when clicking on buttons, maintains accessibility when using keyboard.
+    <button
+      id={id}
+      onClick={e => handleClickEvent(e.target, e)}
+      onMouseDown={e => e.preventDefault()}
+      className="nav-button"
+      aria-label={aria}
+      type="button"
+      style={style}
+    >
+      {children}
+    </button>
+  );
 }
 
 export default NavButton;

@@ -253,6 +253,7 @@ class App extends React.Component {
             <Contact colorScheme={this.state.colorScheme} />
             <SocialMediaButton
               href="mailto:matt.mulengawoo@gmail.com"
+              aria="Open up your favourite email client to send me a message."
               alternative="Send me an email!"
               label="Email"
               position="top"
@@ -261,6 +262,7 @@ class App extends React.Component {
             </SocialMediaButton>
             <SocialMediaButton
               href="https://github.com/mmulenga"
+              aria="Check out my GitHub account."
               alternative="My GitHub account!"
               label="GitHub"
               position="middle"
@@ -269,6 +271,7 @@ class App extends React.Component {
             </SocialMediaButton>
             <SocialMediaButton
               href="https://www.linkedin.com/in/matthew-mulenga/"
+              aria="Take a look at my LinkIn profile."
               alternative="My LinkedIn account!"
               label="LinkedIn"
               position="bottom"

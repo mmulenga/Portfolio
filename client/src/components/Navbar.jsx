@@ -170,6 +170,7 @@ class Navbar extends React.Component<Props, State> {
           />
           <NavButton
             id="home"
+            label="Home Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
@@ -177,6 +178,7 @@ class Navbar extends React.Component<Props, State> {
           </NavButton>
           <NavButton
             id="project"
+            label="Projects Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
@@ -184,6 +186,7 @@ class Navbar extends React.Component<Props, State> {
           </NavButton>
           <NavButton
             id="about"
+            label="About Me Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
@@ -191,6 +194,7 @@ class Navbar extends React.Component<Props, State> {
           </NavButton>
           <NavButton
             id="contact"
+            label="Contact Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >

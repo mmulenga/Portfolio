@@ -45,22 +45,28 @@ function Contact(props: Props) {
     <form className="contact" id="contact-form" onSubmit={(e) => handleSubmit(e)}>
       <input
         className="sender-name"
+        aria-label="Your name."
         placeholder="Name"
         type="text"
         value={senderName}
+        onClick={(e) => e.stopPropagation()}
         onChange={(e) => setSenderName(e.target.value)}
       />
       <input
         className="sender-email"
+        aria-label="Your email address."
         placeholder="Email"
         type="text"
         value={senderEmail}
+        onClick={(e) => e.stopPropagation()}
         onChange={(e) => setSenderEmail(e.target.value)}
       />
       <textarea
         className="email-box"
+        aria-label="Write a message to me!"
         placeholder="Message"
         value={emailBody}
+        onClick={(e) => e.stopPropagation()}
         onChange={(e) => setEmailBody(e.target.value)}
       />
       <input

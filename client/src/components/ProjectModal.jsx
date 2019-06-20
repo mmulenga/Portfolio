@@ -6,15 +6,16 @@ import { ReactComponent as ExitIcon } from '../images/exit.svg';
 import { ReactComponent as ExternalLinkIcon } from '../images/external-link.svg';
 
 class ProjectModal extends React.Component {
-  toggleModal = () => {
+  toggleModal = (e) => {
+    e.stopPropagation();
     this.props.toggleModal();
   };
 
   render() {
     return (
-      <div className="project-modal" style={this.props.visibility}>
-        <div className="modal-box">
-          <ExitIcon className="modal-exit" onClick={this.toggleModal} />
+      <div className="project-modal" onClick={(e) => this.toggleModal(e)} style={this.props.visibility}>
+        <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+          <ExitIcon className="modal-exit" onClick={(e) => this.toggleModal(e)} />
           <div className="modal-image-box">
             <img
               className="modal-image"
