@@ -19,7 +19,7 @@ export const preop = {
   designed and implemented for the Division of Oncology at the Univeristy of Saskatchewan.
   It allows doctors to see which tests they need to run for patients with certain co-morbidities,
   before surgery.`,
-  href: 'http://preop-testing.usask.ca/',
+  href: 'https://github.com/mmulenga/POTA',
 };
 
 export const volunteerize = {
