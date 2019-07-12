@@ -12,7 +12,7 @@ import Contact from './components/Contact';
 import SocialMediaButton from './components/SocialMediaButton';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
-import Modal from './components/Modal';
+import Portal from './components/Portal';
 
 import ContentArea from './containers/ContentArea';
 import Landing from './containers/Landing';
@@ -221,7 +221,7 @@ class App extends React.Component {
               isMobile={this.state.isMobile}
               handleClick={e => this.handleProjectButtonClick("v", e)}
             />
-            <Modal>
+            <Portal>
               <ProjectModal
                 visibility={this.state.modalVisibility}
                 projectName={this.state.modalParameters.name}
@@ -232,7 +232,7 @@ class App extends React.Component {
                 colorScheme={this.state.colorScheme}
                 toggleModal={this.toggleModal}
               />
-            </Modal>
+            </Portal>
           </Section>
           <Section ref={this.aboutSectionRef} type="about-section">
             <SectionTitle

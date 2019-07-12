@@ -11,6 +11,8 @@ import { ReactComponent as ProjectIcon } from '../images/scatter.svg';
 import { ReactComponent as AboutIcon } from '../images/person.svg';
 import { ReactComponent as ContactIcon } from '../images/email.svg';
 
+import logo from '../images/logo.png';
+
 type Props = {
   scrollToSection: any,
   targetSection: string,
@@ -157,7 +159,8 @@ class Navbar extends React.Component<Props, State> {
   render() {
     return (
       <React.Fragment>
-        <div className="navbar">
+        <nav className="navbar">
+          <img className="logo" src={logo} alt="Site logo, a grey M." />
           <BarIcon
             className="menubar"
             onClick={e => this.handleBarClick(e)}
@@ -170,7 +173,7 @@ class Navbar extends React.Component<Props, State> {
           />
           <NavButton
             id="home"
-            label="Home Section"
+            aria="Home Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
@@ -178,7 +181,7 @@ class Navbar extends React.Component<Props, State> {
           </NavButton>
           <NavButton
             id="project"
-            label="Projects Section"
+            aria="Projects Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
@@ -186,7 +189,7 @@ class Navbar extends React.Component<Props, State> {
           </NavButton>
           <NavButton
             id="about"
-            label="About Me Section"
+            aria="About Me Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
@@ -194,13 +197,13 @@ class Navbar extends React.Component<Props, State> {
           </NavButton>
           <NavButton
             id="contact"
-            label="Contact Section"
+            aria="Contact Section"
             handleClick={this.handleClick}
             style={this.state.navbarDisplay}
           >
             <ContactIcon ref={this.contactRef} />
           </NavButton>
-        </div>
+        </nav>
       </React.Fragment>
     );
   }

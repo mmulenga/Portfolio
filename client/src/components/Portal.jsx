@@ -10,7 +10,7 @@ type Props = {
 
 const root = document.getElementById('root');
 
-function Modal(props: Props) {
+function Portal(props: Props) {
   const { children } = props;
   const el: HTMLDivElement = document.createElement('div');
 
@@ -25,4 +25,4 @@ function Modal(props: Props) {
   return ReactDOM.createPortal(children, el);
 }
 
-export default Modal;
+export default Portal;

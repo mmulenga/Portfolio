@@ -1,0 +1,13 @@
+.tooltip {
+  position: absolute;
+  width: fit-content;
+  background-color: #1e1d1d;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}

@@ -1,10 +1,14 @@
 .about-text {
-  width: 80%;
+  width: 90%;
   color: white;
   font-size: 25px;
   align-self: center;
   text-align: center;
   z-index: 1;
+}
+
+.underline {
+  text-decoration: underline dashed #5edcff;
 }
 
 @media only screen and (min-width: 768px) {
