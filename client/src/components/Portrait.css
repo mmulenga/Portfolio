@@ -6,6 +6,7 @@
   align-self: center;
   justify-self: center;
   border-radius: 50%;
+  object-fit: cover;
 
   z-index: 1;
 }
