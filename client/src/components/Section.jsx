@@ -1,7 +1,15 @@
+// @flow
+
 import React from 'react';
 import './Section.css';
 
-function Section(props) {
+type Props = {
+  forwardedRef: any,
+  type: string,
+  children: any,
+}
+
+function Section(props: Props) {
   const { forwardedRef, type, children } = props;
 
   return (

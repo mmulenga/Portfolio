@@ -1,7 +1,15 @@
+// @flow
+
 import React from 'react';
 import './ContentArea.css';
 
-function ContentArea(props) {
+type Props = {
+  forwardedRef: any,
+  setTargetSection: any,
+  children: any,
+}
+
+function ContentArea(props: Props) {
   const { forwardedRef, setTargetSection, children } = props;
 
   function handleScroll() {

@@ -13,10 +13,9 @@ import SocialMediaButton from './components/SocialMediaButton';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
 import Portal from './components/Portal';
-
-import ContentArea from './containers/ContentArea';
-import Landing from './containers/Landing';
-import Section from './containers/Section';
+import ContentArea from './components/ContentArea';
+import Landing from './components/Landing';
+import Section from './components/Section';
 
 import { ReactComponent as EmailIcon } from './images/envelope.svg';
 import { ReactComponent as GitIcon } from './images/github.svg';

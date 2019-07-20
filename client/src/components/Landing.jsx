@@ -1,9 +1,16 @@
+// @flow
+
 import React from 'react';
-import Portrait from '../components/Portrait';
-import Name from '../components/Name';
+import Portrait from './Portrait';
+import Name from './Name';
 import './Landing.css';
 
-function Landing(props) {
+type Props = {
+  forwardedRef: any,
+  colorScheme: any,
+}
+
+function Landing(props: Props) {
   const { forwardedRef, colorScheme } = props;
 
   return (
