@@ -22,7 +22,7 @@ export default function ArchitectureDiagram({ diagram }) {
           </Fragment>
         ))}
 
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-3 gap-2">
           {diagram.outputs.map((out) => (
             <div className="mm-node" key={out}>
               {out}

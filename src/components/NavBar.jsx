@@ -3,7 +3,7 @@ import { profile, nav } from '../data/content.js'
 export default function NavBar() {
   return (
     <header className="mx-auto flex w-full max-w-page items-center justify-between px-7 py-6">
-      <span className="font-display text-[17px] font-black tracking-[-0.02em]">
+      <span className="font-display text-[56px] font-black tracking-[-0.02em]">
         {profile.name}
       </span>
 

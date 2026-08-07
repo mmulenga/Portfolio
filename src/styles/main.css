@@ -8,7 +8,7 @@
   --color-ink: #10141a; /* primary text, dark contact panel */
   --color-sig: #2b59ff; /* accent — links, primary buttons, highlighted metrics */
   --color-sig-deep: #1e42cc; /* accent hover */
-  --color-flag: #ff5a47; /* used exactly once, on the contact CTA */
+  --color-flag: #ff5a47; /* contact CTA and the highlighted diagram node */
   --color-ash: #5c6673; /* secondary text */
   --color-copy: #4e5763; /* body copy inside cards */
   --color-line: #dde2e8; /* hairlines and borders */
@@ -101,7 +101,7 @@
   }
 
   .mm-node-highlight {
-    @apply bg-sig border-sig text-white;
+    @apply bg-flag border-flag text-white;
   }
 
   .mm-node-highlight em {
