@@ -6,40 +6,43 @@ export const profile = {
   phone: '[redacted]',
   phoneHref: '[redacted]',
   linkedin: 'https://www.linkedin.com/in/mmulenga',
-  github: '#', // TODO: real GitHub URL, or delete this link everywhere it appears
-  resume: '/matthew-mulenga-resume.pdf' // TODO: drop the PDF into /public
+  github: 'https://www.github.com/mmulenga',
+  resume: '/matthew-mulenga-resume.pdf',
+  photo: '/matthew-mulenga.jpg',
+  photoAlt: 'Matthew Mulenga',
+  photoPlaceholder: 'Add photo'
 }
 
 export const hero = {
   // <mark> renders in the accent colour
-  headline: ['Six years owning the systems a university ', 'can\'t operate without.'],
+  headline: ['Six years ', 'building and owning critical ', 'university systems.'],
   subline:
     "I'm Matthew. Since 2019 I've built and owned enterprise integrations, credential-delivery infrastructure and student-system applications at the University of Saskatchewan — usually as the only person on them. I'm looking for a product team where I can do that at a larger scale.",
   sublineBold: 'University of Saskatchewan',
   stats: [
     { value: '$200K+', label: 'annual revenue unlocked' },
-    { value: '30,000+', label: 'identity records moved daily' },
-    { value: '6 yrs', label: 'shipping to production, remote' },
+    { value: '30,000+', label: 'identity records managed via pipeline' },
+    { value: '6 yrs', label: 'shipping to production' },
     { value: '3', label: 'enterprise systems owned outright' }
   ]
 }
 
 export const featured = {
-  label: 'Featured · designed and shipped solo · in production',
+  label: 'Featured · designed and shipped · in production',
   title: "Connecting the University to Canada's national credential network",
   qa: [
     {
       q: 'The problem',
-      a: 'Transcripts, confirmations of enrolment and graduation documents were delivered on paper and by hand. Students waited days. The University had no digital channel into the national credential network that employers and other institutions were already using.'
+      a: 'Transcripts, confirmations of enrolment and graduation documents were standardless and not easily shareable between institutions. How could fellow institutions or employers verify the authenticity of a credential? The University had no digital channel into the national credential network that employers and other institutions were already using.'
     },
     {
       q: 'What I built',
-      a: 'An API integration between the student information system and the national credential network, covering the full document lifecycle — request, generation, signing and delivery. Java and Spring Boot against Oracle, running in Docker.'
+      a: 'An API integration between the student information system and the national credential network, covering the full document lifecycle — request, generation, signing and delivery.'
     },
     {
       q: 'The result',
-      a: 'Students get their documents digitally, on demand. The integration generates more than $200K in annual revenue for the University and is still the delivery path for every credential that leaves it.',
-      highlight: 'generates more than $200K in annual revenue'
+      a: 'Students get their digitally signed documents, on demand. The integration unlocked more than $200K in annual revenue for the University and is still the delivery path for every credential that leaves it.',
+      highlight: 'unlocked more than $200K in annual revenue'
     },
     {
       q: 'What made it hard',
@@ -54,11 +57,11 @@ export const featured = {
   diagram: {
     title: 'Credential delivery — request to student',
     nodes: [
-      { label: 'Student information system', meta: 'Oracle' },
-      { label: 'Integration service', meta: 'Java · Spring Boot', highlight: true },
-      { label: 'National credential network', meta: 'REST' }
+      { label: 'Student information system', meta: 'Banner' },
+      { label: 'Integration service', meta: 'Java · Mule · Dataweave', highlight: true },
+      { label: 'National credential network', meta: 'REST API' }
     ],
-    outputs: ['Transcript', 'Confirmation of enrolment'],
+    outputs: ['Transcript', 'Confirmation of Enrolment', 'Confirmation of Graduation'],
     note: 'Signed, verifiable documents delivered on demand — replacing a manual, paper-based process.'
   }
 }
