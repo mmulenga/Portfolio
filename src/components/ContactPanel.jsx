@@ -23,7 +23,6 @@ export default function ContactPanel() {
         <a className={linkClass} href={profile.linkedin}>LinkedIn</a>
         <a className={linkClass} href={profile.github}>GitHub</a>
         <a className={linkClass} href={profile.resume}>Résumé (PDF)</a>
-        <a className={linkClass} href={profile.phoneHref}>{profile.phone}</a>
       </div>
     </div>
   )
