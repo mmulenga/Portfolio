@@ -3,8 +3,6 @@ export const profile = {
   role: 'Software engineer',
   kicker: 'Software engineer · backend & integrations · Saskatoon, SK · remote',
   email: 'matt.mulengawoo@gmail.com',
-  phone: '[redacted]',
-  phoneHref: '[redacted]',
   linkedin: 'https://www.linkedin.com/in/mmulenga',
   github: 'https://www.github.com/mmulenga',
   resume: '/matthew-mulenga-resume.pdf',
