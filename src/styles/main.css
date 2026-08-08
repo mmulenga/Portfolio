@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+
+/* design tokens */
+@theme {
+  /* palette */
+  --color-mist: #eef1f4; /* page background */
+  --color-paper: #ffffff; /* cards and surfaces */
+  --color-ink: #10141a; /* primary text, dark contact panel */
+  --color-sig: #2b59ff; /* accent — links, primary buttons, highlighted metrics */
+  --color-sig-deep: #1e42cc; /* accent hover */
+  --color-flag: #ff5a47; /* contact CTA and the highlighted diagram node */
+  --color-ash: #5c6673; /* secondary text */
+  --color-copy: #4e5763; /* body copy inside cards */
+  --color-line: #dde2e8; /* hairlines and borders */
+  --color-line-soft: #eaeef2; /* table row rules */
+  --color-go: #0b8a55; /* availability dot */
+
+  /* type */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* page width */
+  --container-page: 1160px;
+}
+
+/* base */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-mist);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-sig);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.001ms !important;
+      animation-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* component classes */
+@layer components {
+  /* small uppercase mono label above every section heading */
+  .mm-kicker {
+    @apply font-mono text-[11px] uppercase tracking-[0.14em] text-ash m-0;
+  }
+
+  .mm-surface {
+    @apply bg-paper border border-line rounded-2xl;
+  }
+
+  .mm-card {
+    @apply bg-paper border border-line rounded-[14px] p-7 h-full
+           transition duration-200
+           hover:-translate-y-[3px] hover:shadow-[0_18px_40px_-22px_rgba(16,20,26,0.35)];
+  }
+
+  .mm-chip {
+    @apply bg-paper border border-line rounded-[7px] px-[15px] py-[11px] flex items-baseline gap-[9px];
+  }
+
+  .mm-tag {
+    @apply font-mono text-[10.5px] text-ash bg-[#f2f5f8] rounded px-[7px] py-1;
+  }
+
+  /* nodes in the CSS architecture diagram */
+  .mm-node {
+    @apply border border-[#e4e9ef] bg-[#f8fafc] rounded-lg px-[13px] py-[11px]
+           text-[12.5px] font-medium flex justify-between items-center gap-2.5;
+  }
+
+  .mm-node em {
+    @apply not-italic font-mono text-[10px] text-[#9aa3af];
+  }
+
+  .mm-node-highlight {
+    @apply bg-flag border-flag text-white;
+  }
+
+  .mm-node-highlight em {
+    @apply text-white/70;
+  }
+
+  /* vertical connector between diagram nodes */
+  .mm-connector {
+    @apply h-5 flex justify-center;
+  }
+
+  .mm-connector::before {
+    content: '';
+    @apply w-px bg-[#d6dde6];
+  }
+}
