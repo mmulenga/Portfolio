@@ -1,4 +1,4 @@
-import { contact, profile } from '../data/content.js'
+import { contact, profile } from '../data/content'
 
 const linkClass = 'font-mono text-sm text-[#9fa9b6] transition-colors hover:text-white'
 

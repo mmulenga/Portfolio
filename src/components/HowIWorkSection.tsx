@@ -1,5 +1,5 @@
-import { howIWork } from '../data/content.js'
-import SectionHeading from './SectionHeading.jsx'
+import { howIWork } from '../data/content'
+import SectionHeading from './SectionHeading'
 
 export default function HowIWorkSection() {
   return (

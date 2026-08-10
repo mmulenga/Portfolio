@@ -1,4 +1,6 @@
-export default function ProjectCard({ title, body, tags = [], outcome }) {
+import type { Project } from '../data/content'
+
+export default function ProjectCard({ title, body, tags = [], outcome }: Project) {
   return (
     <div className="mm-card">
       <h3 className="mb-2.5 text-[21px] font-extrabold">{title}</h3>

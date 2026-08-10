@@ -1,4 +1,4 @@
-import { profile, nav } from '../data/content.js'
+import { profile, nav } from '../data/content'
 
 export default function NavBar() {
   return (

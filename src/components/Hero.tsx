@@ -1,4 +1,4 @@
-import { hero, profile } from '../data/content.js'
+import { hero, profile } from '../data/content'
 
 export default function Hero() {
   const [before, accent, after] = hero.headline
