@@ -1,4 +1,98 @@
-export const profile = {
+export interface Profile {
+  name: string
+  role: string
+  kicker: string
+  email: string
+  linkedin: string
+  github: string
+  resume: string
+  photo: string
+  photoAlt: string
+  photoPlaceholder: string
+}
+
+export interface Stat {
+  value: string
+  label: string
+}
+
+/** [plain, accent, plain] — the middle segment renders in the accent colour. */
+export type Headline = [string, string, string]
+
+export interface Hero {
+  headline: Headline
+  subline: string
+  sublineBold: string
+  stats: Stat[]
+}
+
+export interface FeaturedAnswer {
+  q: string
+  a: string
+  /** Substring of `a` to emphasise. Must appear in `a` verbatim. */
+  highlight?: string
+}
+
+export interface FeaturedLink {
+  label: string
+  href: string
+  primary?: boolean
+}
+
+export interface DiagramNode {
+  label: string
+  meta: string
+  highlight?: boolean
+}
+
+export interface Diagram {
+  title: string
+  nodes: DiagramNode[]
+  outputs: string[]
+  note: string
+}
+
+export interface Featured {
+  label: string
+  title: string
+  qa: FeaturedAnswer[]
+  links: FeaturedLink[]
+  diagram: Diagram
+}
+
+/** Shared by `projects` and `ownership` — both render through ProjectCard. */
+export interface Project {
+  title: string
+  body: string
+  tags?: string[]
+  outcome: string
+}
+
+export interface Fact {
+  key: string
+  value: string
+  /** Renders the value in green with an availability dot. */
+  available?: boolean
+  /** Substring of `value` to bold. Must appear in `value` verbatim. */
+  bold?: string
+}
+
+export interface HowIWorkItem {
+  title: string
+  body: string
+}
+
+export interface Contact {
+  heading: string
+  body: string
+}
+
+export interface NavItem {
+  label: string
+  href: string
+}
+
+export const profile: Profile = {
   name: 'Matthew Mulenga',
   role: 'Software engineer',
   kicker: 'Software engineer · backend & integrations · Saskatoon, SK · remote',
@@ -11,7 +105,7 @@ export const profile = {
   photoPlaceholder: 'Add photo'
 }
 
-export const hero = {
+export const hero: Hero = {
   // <mark> renders in the accent colour
   headline: ['Six years ', 'building and owning critical ', 'university systems.'],
   subline:
@@ -25,7 +119,7 @@ export const hero = {
   ]
 }
 
-export const featured = {
+export const featured: Featured = {
   label: 'Featured · designed and shipped · in production',
   title: "Connecting the University to Canada's national credential network",
   qa: [
@@ -64,7 +158,7 @@ export const featured = {
   }
 }
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: 'Identity data pipeline',
     body: 'Contact and identity data for every student, faculty member and staffer was syncing between the student system and the university data warehouse through a brittle legacy replication process. I replaced it with an API-driven pipeline.',
@@ -85,7 +179,7 @@ export const projects = [
   }
 ]
 
-export const ownership = [
+export const ownership: Project[] = [
   {
     title: 'Systems I own',
     body: "Document management, academic advising and degree audit — three enterprise systems where I'm responsible for customisations, upgrades and every bug that comes in. Team leads and developers on other teams route questions about them to me.",
@@ -98,7 +192,7 @@ export const ownership = [
   }
 ]
 
-export const facts = [
+export const facts: Fact[] = [
   { key: 'Available', value: 'Open to new roles — interviewing now', available: true }, // TODO: confirm wording if job-searching quietly
   {
     key: 'Looking for',
@@ -122,7 +216,7 @@ export const facts = [
   }
 ]
 
-export const howIWork = [
+export const howIWork: HowIWorkItem[] = [
   {
     title: 'I take ownership, not tickets',
     body: "Every project above came to me as a problem, not a spec. I've been the only person on systems the University depends on, which means design, delivery, on-call and the boring maintenance are all the same job to me."
@@ -141,12 +235,12 @@ export const howIWork = [
   }
 ]
 
-export const contact = {
+export const contact: Contact = {
   heading: 'Hiring backend or platform engineers?',
   body: "Email is fastest — I reply within a day. Happy to talk about what I've built in more detail than a résumé allows."
 }
 
-export const nav = [
+export const nav: NavItem[] = [
   { label: 'Work', href: '#work' },
   { label: 'Facts', href: '#facts' },
   { label: 'How I work', href: '#how' }

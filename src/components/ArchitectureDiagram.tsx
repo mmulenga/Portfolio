@@ -1,10 +1,15 @@
 import { Fragment } from 'react'
+import type { Diagram } from '../data/content'
+
+interface ArchitectureDiagramProps {
+  diagram: Diagram
+}
 
 /**
  * Flat CSS diagram used instead of a screenshot — the real systems are
  * internal, so nothing confidential can be shown.
  */
-export default function ArchitectureDiagram({ diagram }) {
+export default function ArchitectureDiagram({ diagram }: ArchitectureDiagramProps) {
   return (
     <div className="flex h-full items-center bg-linear-[160deg] from-[#f4f6f9] to-[#e3e8ef] px-[34px] py-[38px]">
       <div className="w-full rounded-xl bg-white px-[22px] py-6 shadow-[0_24px_60px_-22px_rgba(16,20,26,0.3)]">

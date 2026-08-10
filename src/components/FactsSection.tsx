@@ -1,7 +1,12 @@
-import { facts } from '../data/content.js'
-import SectionHeading from './SectionHeading.jsx'
+import { facts } from '../data/content'
+import type { Fact } from '../data/content'
+import SectionHeading from './SectionHeading'
 
-function Value({ fact }) {
+interface ValueProps {
+  fact: Fact
+}
+
+function Value({ fact }: ValueProps) {
   if (fact.available) {
     return (
       <span className="inline-flex items-center gap-2 font-semibold text-go">

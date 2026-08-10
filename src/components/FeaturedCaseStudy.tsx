@@ -1,7 +1,12 @@
-import { featured } from '../data/content.js'
-import ArchitectureDiagram from './ArchitectureDiagram.jsx'
+import { featured } from '../data/content'
+import ArchitectureDiagram from './ArchitectureDiagram'
 
-function Answer({ text, highlight }) {
+interface AnswerProps {
+  text: string
+  highlight?: string
+}
+
+function Answer({ text, highlight }: AnswerProps) {
   if (!highlight) return <>{text}</>
   const [pre, post] = text.split(highlight)
   return (

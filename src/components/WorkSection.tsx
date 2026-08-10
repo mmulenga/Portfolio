@@ -1,6 +1,6 @@
-import { projects, ownership } from '../data/content.js'
-import ProjectCard from './ProjectCard.jsx'
-import SectionHeading from './SectionHeading.jsx'
+import { projects, ownership } from '../data/content'
+import ProjectCard from './ProjectCard'
+import SectionHeading from './SectionHeading'
 
 export default function WorkSection() {
   return (

@@ -1,6 +1,6 @@
 import ReactDOMServer from 'react-dom/server'
-import App from './App.jsx'
+import App from './App'
 
-export function render() {
+export function render(): string {
   return ReactDOMServer.renderToString(<App />)
 }

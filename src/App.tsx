@@ -1,10 +1,10 @@
-import NavBar from './components/NavBar.jsx'
-import Hero from './components/Hero.jsx'
-import FeaturedCaseStudy from './components/FeaturedCaseStudy.jsx'
-import WorkSection from './components/WorkSection.jsx'
-import FactsSection from './components/FactsSection.jsx'
-import HowIWorkSection from './components/HowIWorkSection.jsx'
-import ContactPanel from './components/ContactPanel.jsx'
+import NavBar from './components/NavBar'
+import Hero from './components/Hero'
+import FeaturedCaseStudy from './components/FeaturedCaseStudy'
+import WorkSection from './components/WorkSection'
+import FactsSection from './components/FactsSection'
+import HowIWorkSection from './components/HowIWorkSection'
+import ContactPanel from './components/ContactPanel'
 
 export default function App() {
   return (

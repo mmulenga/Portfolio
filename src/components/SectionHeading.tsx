@@ -1,4 +1,10 @@
-export default function SectionHeading({ kicker, title, sub }) {
+interface SectionHeadingProps {
+  kicker: string
+  title: string
+  sub?: string
+}
+
+export default function SectionHeading({ kicker, title, sub }: SectionHeadingProps) {
   return (
     <div className="mb-7">
       <p className="mm-kicker">{kicker}</p>
