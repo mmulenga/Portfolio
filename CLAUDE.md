@@ -129,10 +129,13 @@ Search the codebase for `TODO` — they're all in `content.ts` and `index.html`.
   already has children. Dev serves an empty shell, so an unconditional `hydrateRoot` breaks dev,
   and an unconditional `createRoot` silently throws away the pre-rendered DOM in prod — with no
   console warning either way. Leave that conditional alone.
-- **Tailwind v4 scans raw source text for class-name candidates — including identifiers and
-  comments.** Naming a local `container` emits the unused `.container` utility into the CSS
-  bundle. If the CSS size moves for no visible reason, look for a variable or comment that
-  collides with a utility name.
+- **Tailwind v4 scans raw source text for class-name candidates — including identifiers, comments
+  and prose.** Naming a local `container` emits the unused `.container` utility. This file caused
+  it too: documenting the design system by name was enough to ship stray CSS, and ordinary English
+  words (`block`, `static`, `table`, `visible`) collide with utilities. `main.css` therefore carries
+  `@source not '../../**/*.md'` — docs describe the CSS, they never define it. Keep that line. If
+  the CSS size moves for no visible reason, look for an identifier or comment that collides with a
+  utility name.
 - **Accessibility isn't optional here** — a broken site is a bad first impression to the exact
   audience this page exists for. Keep the skip link, keep focus-visible outlines, keep the facts
   table as a real `<table>` with `<th scope="row">`.

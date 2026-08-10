@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+/* Tailwind v4 auto-detects sources and scans them as raw text, so prose that
+   merely mentions a utility emits it. CLAUDE.md documents this design system
+   by name, which was enough to ship a stray `.container`. Docs describe the
+   CSS; they never define it. */
+@source not '../../**/*.md';
+
 /* design tokens */
 @theme {
   /* palette */
