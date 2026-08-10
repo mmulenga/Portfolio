@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10141A" />
     <title>Matthew Mulenga — Software Engineer</title>
     <meta
       name="description"
@@ -17,8 +18,19 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mattmulenga.com" />
+    <meta property="og:site_name" content="Matthew Mulenga" />
     <!-- TODO: add /og-image.png (1200x630) to public/ and uncomment -->
     <!-- <meta property="og:image" content="https://mattmulenga.com/og-image.png" /> -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Matthew Mulenga — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Six years owning enterprise integrations and credential infrastructure at the University of Saskatchewan."
+    />
+    <!-- TODO: twitter:image once /og-image.png exists -->
+
+    <link rel="canonical" href="https://mattmulenga.com/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +38,56 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    <!--
+      Structured data for search rich results and LLM answer engines (GEO).
+      Keep in sync by hand with src/data/content.js `profile` — this file
+      can't import JS, and the page has no build step that generates it.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Matthew Mulenga",
+          "url": "https://mattmulenga.com",
+          "image": "https://mattmulenga.com/matthew-mulenga.jpg",
+          "jobTitle": "Software Engineer",
+          "description": "Software engineer with six years of production ownership at the University of Saskatchewan — enterprise integrations, credential-delivery infrastructure and student-system applications.",
+          "email": "mailto:matt.mulengawoo@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/mmulenga",
+            "https://www.github.com/mmulenga"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Saskatoon",
+            "addressRegion": "SK",
+            "addressCountry": "CA"
+          },
+          "worksFor": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Saskatchewan"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Saskatchewan"
+          },
+          "knowsAbout": [
+            "Java",
+            "Spring Boot",
+            "Groovy",
+            "Grails",
+            "Oracle SQL",
+            "REST API design",
+            "Python",
+            "Rust",
+            "System integrations"
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

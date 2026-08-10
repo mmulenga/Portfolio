@@ -1,0 +1,36 @@
+# Matthew Mulenga
+
+> Software engineer in Saskatoon, SK (remote-first). Six years of production ownership at the
+> University of Saskatchewan, moving from university systems into industry. Mid-to-senior
+> backend/full-stack engineer, not a career changer.
+
+## Summary
+
+- Currently: Programmer, University of Saskatchewan — October 2019 to present.
+- Education: B.Sc. Computer Science, University of Saskatchewan, 2019.
+- Strongest in: Java, Spring Boot, Groovy/Grails, Oracle SQL, REST API design, Python.
+- Also worked with: Rust, JavaScript, HTML/CSS, Bash, Git, Docker, AWS.
+- Looking for: mid-to-senior backend or full-stack roles on teams building integrations,
+  platform services, or data infrastructure.
+- Location: Saskatoon, SK (Central Time). Six years fully remote; open to hybrid in Saskatoon.
+- Contact: matt.mulengawoo@gmail.com
+
+## Featured work
+
+- **Credential network integration** — built and owns the API integration between the
+  University's student information system and Canada's national credential network, covering
+  the full document lifecycle (request, generation, signing, delivery). Unlocked $200K+ in
+  annual revenue and remains the delivery path for every credential the University issues.
+- **Identity data pipeline** — replaced a brittle legacy replication process with an API-driven
+  pipeline syncing identity data for 30,000+ students, faculty and staff.
+- **Graduate progress tracker** — built solo from an empty repository; used university-wide by
+  graduate committees to replace paper/email tracking.
+- **Confirmation of Graduation system** — took over an unowned application and rewrote its
+  document generation, including patching an embedded PDF library to support required features.
+- Owns three enterprise systems outright: document management, academic advising, and degree
+  audit. Mentored two developers and wrote documentation that didn't previously exist.
+
+## Pages
+
+- Full site (case studies, project detail, contact): https://mattmulenga.com/
+- Résumé (PDF): https://mattmulenga.com/matthew-mulenga-resume.pdf
